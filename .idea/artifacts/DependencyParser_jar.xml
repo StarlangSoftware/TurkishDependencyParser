@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DependencyParser:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DependencyParser_jar</output-path>
+    <root id="archive" name="DependencyParser.jar">
+      <element id="module-output" name="DependencyParser" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/libs/MorphologicalAnalysis.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Corpus" />
+    </root>
+  </artifact>
+</component>
