@@ -53,3 +53,5 @@ nb-configuration.xml
 release.properties
 pom.xml.releaseBackup
 pom.xml.tag
+out/artifacts/DependencyParser_jar/DependencyParser.jar
+out/production/DependencyParser/libs/MorphologicalAnalysis.jar
