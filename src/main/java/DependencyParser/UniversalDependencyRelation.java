@@ -18,7 +18,7 @@ public class UniversalDependencyRelation extends DependencyRelation{
             UniversalDependencyType.PARATAXIS, UniversalDependencyType.PUNCT, UniversalDependencyType.REPARANDUM, UniversalDependencyType.ROOT,
             UniversalDependencyType.VOCATIVE, UniversalDependencyType.XCOMP};
 
-    protected UniversalDependencyRelation(int toWord) {
+    public UniversalDependencyRelation(int toWord) {
         super(toWord);
     }
 
