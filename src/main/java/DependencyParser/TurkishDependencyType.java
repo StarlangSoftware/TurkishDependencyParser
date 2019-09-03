@@ -1,5 +1,8 @@
 package DependencyParser;
 
+/**
+ * Enumerator class for Turkish Dependency tags
+ */
 public enum TurkishDependencyType {
     VOCATIVE, SUBJECT, DATIVE_ADJUNCT, OBJECT, POSSESSOR,
     MODIFIER, S_MODIFIER, ABLATIVE_ADJUNCT, DETERMINER, SENTENCE,

@@ -18,10 +18,21 @@ public class UniversalDependencyRelation extends DependencyRelation{
             UniversalDependencyType.PARATAXIS, UniversalDependencyType.PUNCT, UniversalDependencyType.REPARANDUM, UniversalDependencyType.ROOT,
             UniversalDependencyType.VOCATIVE, UniversalDependencyType.XCOMP};
 
+    /**
+     * Overriden Universal Dependency Relation constructor. Gets toWord as input and calls it super class's constructor
+     * @param toWord Index of the word in the sentence that dependency relation is related
+     */
     public UniversalDependencyRelation(int toWord) {
         super(toWord);
     }
 
+    /**
+     * The getDependencyTag method takes an dependency tag as string and returns the {@link UniversalDependencyType}
+     * form of it.
+     *
+     * @param tag  Type of the dependency tag in string form
+     * @return Type of the dependency in {@link UniversalDependencyType} form
+     */
     public static UniversalDependencyType getDependencyTag(String tag){
         for (int j = 0; j < universalDependencyTags.length; j++) {
             if (tag.equalsIgnoreCase(universalDependencyTypes[j])) {
@@ -31,6 +42,12 @@ public class UniversalDependencyRelation extends DependencyRelation{
         return null;
     }
 
+    /**
+     * Another constructor for UniversalDependencyRelation. Gets input toWord and dependencyType as arguments and
+     * calls the super class's constructor and sets the dependency type.
+     * @param toWord Index of the word in the sentence that dependency relation is related
+     * @param dependencyType Type of the dependency relation in string form
+     */
     public UniversalDependencyRelation(int toWord, String dependencyType){
         super(toWord);
         this.universalDependencyType = getDependencyTag(dependencyType);

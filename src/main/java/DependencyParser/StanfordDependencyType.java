@@ -1,5 +1,8 @@
 package DependencyParser;
 
+/**
+ * Enumerator class for Stanford Dependency tags
+ */
 public enum StanfordDependencyType {
     ACOMP, ADVCL, ADVMOD, AGENT, AMOD, APPOS, AUX, AUXPASS, CC, CCOMP, CONJ, COP, CSUBJ, CSUBJPASS, DEP, DET,
     DISCOURSE, DOBJ, EXPL, GOESWITH, IOBJ, MARK, MWE, NEG, NN, NPADVMOD, NSUBJ, NSUBJPASS, NUM, NUMBER, PARATAXIS, PCOMP,

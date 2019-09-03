@@ -13,6 +13,11 @@ public class TurkishDependencyTreeBankWord extends Word{
     private ArrayList<MorphologicalParse> originalParses;
     private TurkishDependencyRelation relation = null;
 
+    /**
+     * Given the parsed xml node which contains information about a word and related attributes including the
+     * dependencies, the method constructs a {@link TurkishDependencyTreeBankWord} from it.
+     * @param wordNode Xml parsed node containing information about a word.
+     */
     public TurkishDependencyTreeBankWord(Node wordNode){
         super();
         NamedNodeMap attributes;
@@ -70,6 +75,11 @@ public class TurkishDependencyTreeBankWord extends Word{
         }
     }
 
+    /**
+     * Given the morphological parse of a word, this method splits it into inflectional groups.
+     * @param IG Morphological parse of the word in string form.
+     * @return An array of inflectional groups stored as strings.
+     */
     private ArrayList<String> splitIntoInflectionalGroups(String IG){
         ArrayList<String> inflectionalGroups = new ArrayList<String>();
         IG = IG.replaceAll("\\(\\+Punc", "@").replaceAll("\\)\\+Punc", "\\$");
@@ -83,10 +93,19 @@ public class TurkishDependencyTreeBankWord extends Word{
         return inflectionalGroups;
     }
 
+    /**
+     * Accessor for the parse attribute
+     * @return Parse attribute
+     */
     public MorphologicalParse getParse(){
         return parse;
     }
 
+    /**
+     * Accessor for a specific parse.
+     * @param index Index of the word.
+     * @return Parse of the index'th word
+     */
     public MorphologicalParse getOriginalParse(int index){
         if (index < originalParses.size()){
             return originalParses.get(index);
@@ -95,10 +114,18 @@ public class TurkishDependencyTreeBankWord extends Word{
         }
     }
 
+    /**
+     * Number of words in this item.
+     * @return Number of words in this item.
+     */
     public int size(){
         return originalParses.size();
     }
 
+    /**
+     * Accessor for the relation attribute.
+     * @return relation attribute.
+     */
     public TurkishDependencyRelation getRelation(){
         return relation;
     }

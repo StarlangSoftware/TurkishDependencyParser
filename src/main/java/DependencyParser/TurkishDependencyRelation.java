@@ -16,6 +16,13 @@ public class TurkishDependencyRelation extends DependencyRelation{
             TurkishDependencyType.INSTRUMENTAL_ADJUNCT, TurkishDependencyType.RELATIVIZER, TurkishDependencyType.NEGATIVE_PARTICLE, TurkishDependencyType.ETOL, TurkishDependencyType.COLLOCATION,
             TurkishDependencyType.FOCUS_PARTICLE, TurkishDependencyType.EQU_ADJUNCT, TurkishDependencyType.APPOSITION};
 
+    /**
+     * The getDependencyTag method takes an dependency tag as string and returns the {@link TurkishDependencyType}
+     * form of it.
+     *
+     * @param tag  Type of the dependency tag in string form
+     * @return Type of the dependency in {@link TurkishDependencyType} form
+     */
     public static TurkishDependencyType getDependencyTag(String tag){
         for (int j = 0; j < turkishDependencyTypes.length; j++) {
             if (tag.equalsIgnoreCase(turkishDependencyTypes[j])) {
@@ -25,6 +32,13 @@ public class TurkishDependencyRelation extends DependencyRelation{
         return null;
     }
 
+    /**
+     * Another constructor for TurkishDependencyRelation. Gets input toWord, toIG, and dependencyType as arguments and
+     * calls the super class's constructor and sets the IG and dependency type.
+     * @param toWord Index of the word in the sentence that dependency relation is related
+     * @param toIG Index of the inflectional group the dependency relation is related
+     * @param dependencyType Type of the dependency relation in string form
+     */
     public TurkishDependencyRelation(int toWord, int toIG, String dependencyType){
         super(toWord);
         this.toIG = toIG;
@@ -34,10 +48,18 @@ public class TurkishDependencyRelation extends DependencyRelation{
         }
     }
 
+    /**
+     * Accessor for the toIG attribute
+     * @return toIG attribute
+     */
     public int toIG(){
         return toIG;
     }
 
+    /**
+     * Accessor for the turkishDependencyType attribute
+     * @return turkishDependencyType attribute
+     */
     public TurkishDependencyType getTurkishDependencyType(){
         return turkishDependencyType;
     }

@@ -21,6 +21,13 @@ public class StanfordDependencyRelation extends DependencyRelation{
     StanfordDependencyType.RCMOD, StanfordDependencyType.REF, StanfordDependencyType.ROOT, StanfordDependencyType.TMOD, StanfordDependencyType.VMOD,
     StanfordDependencyType.XCOMP, StanfordDependencyType.XSUBJ};
 
+    /**
+     * The getDependencyTag method takes an dependency tag as string and returns the {@link StanfordDependencyType}
+     * form of it.
+     *
+     * @param tag  Type of the dependency tag in string form
+     * @return Type of the dependency in {@link StanfordDependencyType} form
+     */
     public static StanfordDependencyType getDependencyTag(String tag){
         for (int j = 0; j < stanfordDependencyTags.length; j++) {
             if (tag.equalsIgnoreCase(stanfordDependencyTypes[j])) {
@@ -30,6 +37,12 @@ public class StanfordDependencyRelation extends DependencyRelation{
         return null;
     }
 
+    /**
+     * Another constructor for StanfordDependencyRelation. Gets input toWord and dependencyType as arguments and
+     * calls the super class's constructor and sets the dependency type.
+     * @param toWord Index of the word in the sentence that dependency relation is related
+     * @param dependencyType Type of the dependency relation in string form
+     */
     public StanfordDependencyRelation(int toWord, String dependencyType){
         super(toWord);
         this.stanfordDependencyType = getDependencyTag(dependencyType);
