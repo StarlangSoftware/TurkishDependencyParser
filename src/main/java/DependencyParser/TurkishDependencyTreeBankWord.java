@@ -63,9 +63,7 @@ public class TurkishDependencyTreeBankWord extends Word{
             for (i = 1; i <= 9; i++){
                 if (attributes.getNamedItem("ORG_IG" + i) != null){
                     IG = attributes.getNamedItem("ORG_IG" + i).getNodeValue();
-                    if (i == 1){
-                        originalParses.add(new MorphologicalParse(splitIntoInflectionalGroups(IG)));
-                    }
+                    originalParses.add(new MorphologicalParse(splitIntoInflectionalGroups(IG)));
                 } else {
                     break;
                 }
