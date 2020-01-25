@@ -4,10 +4,10 @@ public class UniversalDependencyRelation extends DependencyRelation{
 
     private UniversalDependencyType universalDependencyType;
 
-    public static final String[] universalDependencyTypes = {"acl", "advcl", "advmod", "amod", "appos", "aux",
-            "case", "cc", "ccomp", "clf", "compound", "conj", "cop", "csubj", "csubjpass", "dep", "det", "discourse", "dislocated",
-            "expl", "fixed", "flat", "goeswith", "iobj", "list", "mark", "nmod", "neg", "nsubj", "nsubjpass", "nummod", "obj", "obl", "orphan",
-            "parataxis", "punct", "reparandum", "root", "vocative", "xcomp"};
+    public static final String[] universalDependencyTypes = {"ACL", "ADVCL", "ADVMOD", "AMOD", "APPOS", "AUX",
+            "CASE", "CC", "CCOMP", "CLF", "COMPOUND", "CONJ", "COP", "CSUBJ", "CSUBJPASS", "DEP", "DET", "DISCOURSE", "DISLOCATED",
+            "EXPL", "FIXED", "FLAT", "GOESWITH", "IOBJ", "LIST", "MARK", "NMOD", "NEG", "NSUBJ", "NSUBJPASS", "NUMMOD", "OBJ", "OBL", "ORPHAN",
+            "PARATAXIS", "PUNCT", "REPARANDUM", "ROOT", "VOCATIVE", "XCOMP"};
     public static final UniversalDependencyType[] universalDependencyTags = {UniversalDependencyType.ACL, UniversalDependencyType.ADVCL,
             UniversalDependencyType.ADVMOD, UniversalDependencyType.AMOD, UniversalDependencyType.APPOS, UniversalDependencyType.AUX, UniversalDependencyType.CASE,
             UniversalDependencyType.CC, UniversalDependencyType.CCOMP, UniversalDependencyType.CLF, UniversalDependencyType.COMPOUND, UniversalDependencyType.CONJ,
