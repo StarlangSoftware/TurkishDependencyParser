@@ -1,6 +1,8 @@
 # DependencyParser
 For Developers
 ============
+You can also see either [Python](https://github.com/olcaytaner/TurkishDependencyParser-Py) 
+or [C++](https://github.com/olcaytaner/TurkishDependencyParser-CPP) repository.
 
 ## Requirements
 
