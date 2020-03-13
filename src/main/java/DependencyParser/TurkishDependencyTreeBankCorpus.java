@@ -2,10 +2,13 @@ package DependencyParser;
 
 import Corpus.Corpus;
 import DataStructure.CounterHashMap;
-import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -36,16 +39,21 @@ public class TurkishDependencyTreeBankCorpus extends Corpus{
         super();
         Node rootNode, sentenceNode;
         TurkishDependencyTreeBankSentence sentence;
-        Document doc;
-        DOMParser parser = new DOMParser();
+        DocumentBuilder builder = null;
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
-            parser.parse(fileName);
+            builder = factory.newDocumentBuilder();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+        Document doc = null;
+        try {
+            doc = builder.parse(fileName);
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        doc = parser.getDocument();
         rootNode = doc.getFirstChild();
         sentenceNode = rootNode.getFirstChild();
         while (sentenceNode != null){
