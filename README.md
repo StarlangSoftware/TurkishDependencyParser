@@ -1,4 +1,7 @@
 # DependencyParser
+
+This tool is used for Dependency Parsing of Turkish sentences: it breaks down sentences into components and links each component to another in terms of its function, eventually connecting all words together into the root node.
+
 For Developers
 ============
 You can also see either [Python](https://github.com/olcaytaner/TurkishDependencyParser-Py) 
@@ -86,34 +89,8 @@ DependencyParser
 
 ### Maven Usage
 
-    <groupId>NlpToolkit</groupId>
-    <artifactId>DependencyParser</artifactId>
-    <version>1.0.0</version>
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-    <repositories>
-        <repository>
-            <id>NlpToolkit</id>
-            <url>http://haydut.isikun.edu.tr:8081/artifactory/NlpToolkit</url>
-        </repository>
-    </repositories>
-    <dependencies>
-        <dependency>
-            <groupId>NlpToolkit</groupId>
-            <artifactId>Dictionary</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>NlpToolkit</groupId>
-            <artifactId>MorphologicalAnalysis</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>NlpToolkit</groupId>
-            <artifactId>Corpus</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
-    
+	<dependency>
+  	<groupId>NlpToolkit</groupId>
+  	<artifactId>DependencyParser</artifactId>
+  	<version>1.0.3</version>
+	</dependency>
