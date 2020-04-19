@@ -89,8 +89,8 @@ DependencyParser
 
 ### Maven Usage
 
-	<dependency>
-  	<groupId>NlpToolkit</groupId>
-  	<artifactId>DependencyParser</artifactId>
-  	<version>1.0.3</version>
-	</dependency>
+        <dependency>
+            <groupId>io.github.starlangsoftware</groupId>
+            <artifactId>DependencyParser</artifactId>
+            <version>1.0.5</version>
+        </dependency>
