@@ -4,6 +4,7 @@ import Corpus.Corpus;
 import DataStructure.CounterHashMap;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -48,7 +49,8 @@ public class TurkishDependencyTreeBankCorpus extends Corpus{
         }
         Document doc = null;
         try {
-            doc = builder.parse(fileName);
+            ClassLoader classLoader = getClass().getClassLoader();
+            doc = builder.parse(new InputSource(classLoader.getResourceAsStream(fileName)));
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
