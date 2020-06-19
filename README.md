@@ -36,7 +36,7 @@ Use Git for cloning the code to your local or below line for Ubuntu:
 
 A directory called DependencyParser will be created. Or you can use below link for exploring the code:
 
-	git clone https://github.com/olcaytaner/DependencyParser.git
+	git clone https://github.com/starlangsoftware/TurkishDependencyParser.git
 
 ## Open project with IntelliJ IDEA
 
