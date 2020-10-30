@@ -1,4 +1,4 @@
-package DependencyParser;
+package DependencyParser.Turkish;
 
 import Corpus.Corpus;
 import DataStructure.CounterHashMap;

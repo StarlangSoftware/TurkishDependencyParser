@@ -1,6 +1,10 @@
-package DependencyParser;
+package DependencyParser.Turkish;
 
 import DataStructure.CounterHashMap;
+import DependencyParser.Turkish.TurkishDependencyTreeBankCorpus;
+import DependencyParser.Turkish.TurkishDependencyTreeBankSentence;
+import DependencyParser.Turkish.TurkishDependencyTreeBankWord;
+import DependencyParser.Turkish.TurkishDependencyType;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

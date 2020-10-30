@@ -1,4 +1,4 @@
-package DependencyParser;
+package DependencyParser.Universal;
 
 /**
  * Enumerator class for Universal Dependency tags

@@ -1,4 +1,4 @@
-package DependencyParser;
+package DependencyParser.Stanford;
 
 /**
  * Enumerator class for Stanford Dependency tags

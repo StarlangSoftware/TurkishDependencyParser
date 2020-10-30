@@ -1,4 +1,4 @@
-package DependencyParser;
+package DependencyParser.Turkish;
 
 import Corpus.Sentence;
 import org.w3c.dom.Node;

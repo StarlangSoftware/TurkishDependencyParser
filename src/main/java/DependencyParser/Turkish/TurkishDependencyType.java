@@ -1,4 +1,4 @@
-package DependencyParser;
+package DependencyParser.Turkish;
 
 /**
  * Enumerator class for Turkish Dependency tags

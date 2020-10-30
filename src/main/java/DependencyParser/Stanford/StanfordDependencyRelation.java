@@ -1,6 +1,8 @@
-package DependencyParser;
+package DependencyParser.Stanford;
 
-public class StanfordDependencyRelation extends DependencyRelation{
+import DependencyParser.DependencyRelation;
+
+public class StanfordDependencyRelation extends DependencyRelation {
 
     private StanfordDependencyType stanfordDependencyType;
 

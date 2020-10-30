@@ -1,6 +1,8 @@
-package DependencyParser;
+package DependencyParser.Universal;
 
-public class UniversalDependencyRelation extends DependencyRelation{
+import DependencyParser.DependencyRelation;
+
+public class UniversalDependencyRelation extends DependencyRelation {
 
     private UniversalDependencyType universalDependencyType;
 

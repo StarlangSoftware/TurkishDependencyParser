@@ -1,4 +1,4 @@
-package DependencyParser;
+package DependencyParser.Turkish;
 
 import Dictionary.Word;
 import MorphologicalAnalysis.MorphologicalParse;

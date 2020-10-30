@@ -1,6 +1,8 @@
-package DependencyParser;
+package DependencyParser.Turkish;
 
-public class TurkishDependencyRelation extends DependencyRelation{
+import DependencyParser.DependencyRelation;
+
+public class TurkishDependencyRelation extends DependencyRelation {
 
     private int toIG;
     private TurkishDependencyType turkishDependencyType;
