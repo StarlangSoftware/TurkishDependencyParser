@@ -35,7 +35,10 @@ public class UniversalDependencyTreeBankCorpus extends Corpus{
                             if (id.matches("\\d+")){
                                 String surfaceForm = items[1];
                                 String lemma = items[2];
-                                String upos = items[3];
+                                UniversalDependencyPosType upos = UniversalDependencyRelation.getDependencyPosType(items[3]);
+                                if (upos == null){
+                                    System.out.println("Line does not contain universal pos ->" + line);
+                                }
                                 String xpos = items[4];
                                 UniversalDependencyTreeBankFeatures features = new UniversalDependencyTreeBankFeatures(items[5]);
                                 if (!items[6].equals("_")){

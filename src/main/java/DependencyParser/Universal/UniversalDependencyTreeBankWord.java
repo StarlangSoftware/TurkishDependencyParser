@@ -6,14 +6,14 @@ public class UniversalDependencyTreeBankWord extends Word {
 
     private int id;
     private String lemma;
-    private String upos;
+    private UniversalDependencyPosType upos;
     private String xpos;
     private UniversalDependencyTreeBankFeatures features;
     private UniversalDependencyRelation relation;
     private String deps;
     private String misc;
 
-    public UniversalDependencyTreeBankWord(int id, String name, String lemma, String upos, String xpos,
+    public UniversalDependencyTreeBankWord(int id, String name, String lemma, UniversalDependencyPosType upos, String xpos,
                                            UniversalDependencyTreeBankFeatures features,
                                            UniversalDependencyRelation relation, String deps, String misc){
         super(name);
@@ -35,7 +35,7 @@ public class UniversalDependencyTreeBankWord extends Word {
         return lemma;
     }
 
-    public String getUpos() {
+    public UniversalDependencyPosType getUpos() {
         return upos;
     }
 

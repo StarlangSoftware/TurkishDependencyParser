@@ -19,6 +19,11 @@ public class UniversalDependencyRelation extends DependencyRelation {
             UniversalDependencyType.NEG, UniversalDependencyType.NSUBJ, UniversalDependencyType.NSUBJPASS, UniversalDependencyType.NUMMOD, UniversalDependencyType.OBJ, UniversalDependencyType.OBL, UniversalDependencyType.ORPHAN,
             UniversalDependencyType.PARATAXIS, UniversalDependencyType.PUNCT, UniversalDependencyType.REPARANDUM, UniversalDependencyType.ROOT,
             UniversalDependencyType.VOCATIVE, UniversalDependencyType.XCOMP};
+    public static final String[] universalDependencyPosTypes = {"ADJ", "ADV", "INTJ", "NOUN", "PROPN", "VERB", "ADP", "AUX", "CCONJ",
+            "DET", "NUM", "PART", "PRON", "SCONJ", "PUNCT", "SYM", "X"};
+    public static final UniversalDependencyPosType[] universalDependencyPosTags = {UniversalDependencyPosType.ADJ, UniversalDependencyPosType.ADV, UniversalDependencyPosType.INTJ, UniversalDependencyPosType.NOUN, UniversalDependencyPosType.PROPN,
+            UniversalDependencyPosType.VERB, UniversalDependencyPosType.ADP, UniversalDependencyPosType.AUX, UniversalDependencyPosType.CCONJ, UniversalDependencyPosType.DET, UniversalDependencyPosType.NUM, UniversalDependencyPosType.PART,
+            UniversalDependencyPosType.PRON, UniversalDependencyPosType.SCONJ, UniversalDependencyPosType.PUNCT, UniversalDependencyPosType.SYM, UniversalDependencyPosType.X};
 
     /**
      * Overriden Universal Dependency Relation constructor. Gets toWord as input and calls it super class's constructor
@@ -39,6 +44,15 @@ public class UniversalDependencyRelation extends DependencyRelation {
         for (int j = 0; j < universalDependencyTags.length; j++) {
             if (tag.equalsIgnoreCase(universalDependencyTypes[j])) {
                 return universalDependencyTags[j];
+            }
+        }
+        return null;
+    }
+
+    public static UniversalDependencyPosType getDependencyPosType(String tag){
+        for (int i = 0; i < universalDependencyPosTypes.length; i++) {
+            if (tag.equalsIgnoreCase(universalDependencyPosTypes[i])) {
+                return universalDependencyPosTags[i];
             }
         }
         return null;
