@@ -63,4 +63,10 @@ public class UniversalDependencyTreeBankWord extends Word {
         return misc;
     }
 
+    public String toString(){
+        return id + "\t" + name + "\t" + lemma + "\t" + upos + "\t" +
+                xpos + "\t" + features.toString() + "\t" + relation.to() + "\t" +
+                relation.toString().toLowerCase() + "\t" + deps + "\t" + misc;
+    }
+
 }

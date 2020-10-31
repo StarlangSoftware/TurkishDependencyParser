@@ -25,4 +25,19 @@ public class UniversalDependencyTreeBankFeatures {
     public String getFeatureValue(String feature){
         return featureList.get(feature);
     }
+
+    public String toString(){
+        if (featureList.isEmpty()){
+            return "_";
+        }
+        String result = "";
+        for (String feature : featureList.keySet()){
+            if (result.equals("")){
+                result = feature + "=" + getFeatureValue(feature);
+            } else {
+                result += "|" + feature + "=" + getFeatureValue(feature);
+            }
+        }
+        return result;
+    }
 }
