@@ -16,7 +16,7 @@ public class UniversalDependencyTreeBankFeatures {
                     String featureValue = feature.substring(feature.indexOf("=") + 1).trim();
                     featureList.put(featureName, featureValue);
                 } else {
-                    System.out.println("Fature does not contain = ->" + features);
+                    System.out.println("Feature does not contain = ->" + features);
                 }
             }
         }
