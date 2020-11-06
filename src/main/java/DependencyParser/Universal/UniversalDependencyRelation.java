@@ -7,16 +7,16 @@ public class UniversalDependencyRelation extends DependencyRelation {
     private UniversalDependencyType universalDependencyType;
 
     public static final String[] universalDependencyTypes = {"ACL", "ADVCL", "ADVMOD", "AMOD", "APPOS", "AUX",
-            "CASE", "CC", "CCOMP", "CLF", "COMPOUND", "CONJ", "COP", "CSUBJ", "CSUBJ:PASS", "DEP", "DET", "DISCOURSE", "DISLOCATED",
-            "EXPL", "FIXED", "FLAT", "GOESWITH", "IOBJ", "LIST", "MARK", "NMOD", "NEG", "NSUBJ", "NSUBJ:PASS", "NUMMOD", "OBJ", "OBL", "ORPHAN",
+            "CASE", "CC", "CCOMP", "CLF", "COMPOUND", "CONJ", "COP", "CSUBJ", "DEP", "DET", "DISCOURSE", "DISLOCATED",
+            "EXPL", "FIXED", "FLAT", "GOESWITH", "IOBJ", "LIST", "MARK", "NMOD", "NEG", "NSUBJ", "NUMMOD", "OBJ", "OBL", "ORPHAN",
             "PARATAXIS", "PUNCT", "REPARANDUM", "ROOT", "VOCATIVE", "XCOMP"};
     public static final UniversalDependencyType[] universalDependencyTags = {UniversalDependencyType.ACL, UniversalDependencyType.ADVCL,
             UniversalDependencyType.ADVMOD, UniversalDependencyType.AMOD, UniversalDependencyType.APPOS, UniversalDependencyType.AUX, UniversalDependencyType.CASE,
             UniversalDependencyType.CC, UniversalDependencyType.CCOMP, UniversalDependencyType.CLF, UniversalDependencyType.COMPOUND, UniversalDependencyType.CONJ,
-            UniversalDependencyType.COP, UniversalDependencyType.CSUBJ, UniversalDependencyType.CSUBJ_PASS, UniversalDependencyType.DEP, UniversalDependencyType.DET, UniversalDependencyType.DISCOURSE,
+            UniversalDependencyType.COP, UniversalDependencyType.CSUBJ, UniversalDependencyType.DEP, UniversalDependencyType.DET, UniversalDependencyType.DISCOURSE,
             UniversalDependencyType.DISLOCATED, UniversalDependencyType.EXPL, UniversalDependencyType.FIXED, UniversalDependencyType.FLAT,
             UniversalDependencyType.GOESWITH, UniversalDependencyType.IOBJ, UniversalDependencyType.LIST, UniversalDependencyType.MARK, UniversalDependencyType.NMOD,
-            UniversalDependencyType.NEG, UniversalDependencyType.NSUBJ, UniversalDependencyType.NSUBJ_PASS, UniversalDependencyType.NUMMOD, UniversalDependencyType.OBJ, UniversalDependencyType.OBL, UniversalDependencyType.ORPHAN,
+            UniversalDependencyType.NEG, UniversalDependencyType.NSUBJ, UniversalDependencyType.NUMMOD, UniversalDependencyType.OBJ, UniversalDependencyType.OBL, UniversalDependencyType.ORPHAN,
             UniversalDependencyType.PARATAXIS, UniversalDependencyType.PUNCT, UniversalDependencyType.REPARANDUM, UniversalDependencyType.ROOT,
             UniversalDependencyType.VOCATIVE, UniversalDependencyType.XCOMP};
     public static final String[] universalDependencyPosTypes = {"ADJ", "ADV", "INTJ", "NOUN", "PROPN", "VERB", "ADP", "AUX", "CCONJ",
@@ -73,7 +73,7 @@ public class UniversalDependencyRelation extends DependencyRelation {
     }
 
     public String toString(){
-        return universalDependencyTypes[universalDependencyType.ordinal()].replaceAll("_", ":");
+        return universalDependencyTypes[universalDependencyType.ordinal()];
     }
 
 }

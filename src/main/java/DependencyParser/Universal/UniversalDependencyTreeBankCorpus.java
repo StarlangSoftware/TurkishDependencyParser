@@ -44,7 +44,7 @@ public class UniversalDependencyTreeBankCorpus extends Corpus{
                                 if (!items[6].equals("_")){
                                     int to = Integer.parseInt(items[6]);
                                     String dependencyType = items[7].toUpperCase();
-                                    if (dependencyType.contains(":") && !dependencyType.endsWith("PASS")){
+                                    if (dependencyType.contains(":")){
                                         dependencyType = dependencyType.substring(0, dependencyType.indexOf(":"));
                                     }
                                     relation = new UniversalDependencyRelation(to, dependencyType);
