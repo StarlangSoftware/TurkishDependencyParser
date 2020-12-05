@@ -55,6 +55,10 @@ public class UniversalDependencyTreeBankWord extends Word {
         return relation;
     }
 
+    public void setRelation(UniversalDependencyRelation relation) {
+        this.relation = relation;
+    }
+
     public String getDeps() {
         return deps;
     }
