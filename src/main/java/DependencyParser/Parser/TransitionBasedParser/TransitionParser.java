@@ -16,7 +16,7 @@ public class TransitionParser {
         return null;
     }
 
-    public UniversalDependencyTreeBankSentence setList(UniversalDependencyTreeBankSentence universalDependencyTreeBankSentence) {
+    private UniversalDependencyTreeBankSentence setList(UniversalDependencyTreeBankSentence universalDependencyTreeBankSentence) {
         UniversalDependencyTreeBankSentence sentence = new UniversalDependencyTreeBankSentence();
         for (int i = 0; i < universalDependencyTreeBankSentence.wordCount(); i++) {
             UniversalDependencyTreeBankWord word = (UniversalDependencyTreeBankWord) universalDependencyTreeBankSentence.getWord(i);
