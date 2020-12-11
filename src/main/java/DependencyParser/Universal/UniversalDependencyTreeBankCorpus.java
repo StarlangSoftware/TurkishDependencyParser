@@ -9,6 +9,10 @@ import java.nio.charset.StandardCharsets;
 
 public class UniversalDependencyTreeBankCorpus extends Corpus{
 
+    public UniversalDependencyTreeBankCorpus(){
+
+    }
+
     public UniversalDependencyTreeBankCorpus(String fileName){
         try {
             UniversalDependencyTreeBankSentence sentence = null;
