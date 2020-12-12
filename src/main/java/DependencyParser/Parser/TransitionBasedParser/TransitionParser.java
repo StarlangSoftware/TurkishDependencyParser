@@ -22,6 +22,8 @@ public class TransitionParser {
     }
 
     public ArrayList<Command> simulateParse(UniversalDependencyTreeBankSentence sentence) {
+        UniversalDependencyTreeBankWord top, beforeTop;
+        UniversalDependencyRelation topRelation, beforeTopRelation;
         ArrayList<Command> commandList = new ArrayList<>();
         ArrayList<Word> wordList = new ArrayList<>();
         Stack<Word> stack = new Stack<>();
@@ -37,17 +39,15 @@ public class TransitionParser {
             }
             commandList.add(Command.SHIFT);
             while (wordList.size() > 0 || stack.size() > 1) {
-                UniversalDependencyTreeBankWord last = ((UniversalDependencyTreeBankWord) stack.peek());
-                UniversalDependencyRelation lastRelation = last.getRelation();
-                UniversalDependencyTreeBankWord beforeLast;
-                UniversalDependencyRelation beforeLastRelation;
+                top = ((UniversalDependencyTreeBankWord) stack.peek());
+                topRelation = top.getRelation();
                 if (stack.size() > 1) {
-                    beforeLast = ((UniversalDependencyTreeBankWord) stack.get(stack.size() - 2));
-                    beforeLastRelation = beforeLast.getRelation();
-                    if (beforeLast.getId() == lastRelation.to() && checkForMoreRelation(wordList, last.getId())) {
+                    beforeTop = ((UniversalDependencyTreeBankWord) stack.get(stack.size() - 2));
+                    beforeTopRelation = beforeTop.getRelation();
+                    if (beforeTop.getId() == topRelation.to() && checkForMoreRelation(wordList, top.getId())) {
                         commandList.add(Command.RIGHTARC);
                         stack.pop();
-                    } else if (last.getId() == beforeLastRelation.to()) {
+                    } else if (top.getId() == beforeTopRelation.to()) {
                         commandList.add(Command.LEFTARC);
                         stack.remove(stack.size() - 2);
                     } else {
@@ -104,7 +104,7 @@ public class TransitionParser {
         }
     }
 
-    public UniversalDependencyTreeBankSentence dependencyParse(UniversalDependencyTreeBankSentence universalDependencyTreeBankSentence) {
+    public UniversalDependencyTreeBankSentence dependencyParse(UniversalDependencyTreeBankSentence universalDependencyTreeBankSentence, Oracle oracle) {
         UniversalDependencyTreeBankSentence sentence = createResultSentence(universalDependencyTreeBankSentence);
         ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList = new ArrayList<>();
         for (int i = 0; i < sentence.wordCount(); i++) {
@@ -112,7 +112,6 @@ public class TransitionParser {
         }
         Stack<AbstractMap.SimpleEntry<Word, Integer>> stack = new Stack<>();
         stack.add(new AbstractMap.SimpleEntry<>(new Word("root"), 0));
-        Oracle oracle = new RandomDecision();
         while (wordList.size() > 0 || stack.size() > 1) {
             Decision decision = oracle.makeDecision(stack, wordList);
             switch (decision.getCommand()) {
@@ -132,11 +131,11 @@ public class TransitionParser {
         return sentence;
     }
 
-    public UniversalDependencyTreeBankCorpus dependencyParse(UniversalDependencyTreeBankCorpus universalDependencyTreeBankCorpus) {
+    public UniversalDependencyTreeBankCorpus dependencyParse(UniversalDependencyTreeBankCorpus universalDependencyTreeBankCorpus, Oracle oracle) {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus();
         for (int i = 0; i < universalDependencyTreeBankCorpus.sentenceCount(); i++) {
             UniversalDependencyTreeBankSentence sentence = (UniversalDependencyTreeBankSentence) universalDependencyTreeBankCorpus.getSentence(i);
-            corpus.addSentence(dependencyParse(sentence));
+            corpus.addSentence(dependencyParse(sentence, oracle));
         }
         return corpus;
     }

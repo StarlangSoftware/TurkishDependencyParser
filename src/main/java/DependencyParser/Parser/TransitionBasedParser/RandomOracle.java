@@ -8,18 +8,19 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Stack;
 
-public class RandomDecision implements Oracle {
+public class RandomOracle implements Oracle {
     @Override
     public Decision makeDecision(Stack<AbstractMap.SimpleEntry<Word, Integer>> stack, ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList) {
         Random random = new Random();
-        int decision = random.nextInt(3);
-        switch (decision) {
+        int command = random.nextInt(3);
+        int relation = random.nextInt(UniversalDependencyType.values().length);
+        switch (command) {
             case 0:
-                return new Decision(Command.LEFTARC, UniversalDependencyType.ACL);
+                return new Decision(Command.LEFTARC, UniversalDependencyType.values()[relation]);
             case 1:
-                return new Decision(Command.RIGHTARC, UniversalDependencyType.ACL);
+                return new Decision(Command.RIGHTARC, UniversalDependencyType.values()[relation]);
             case 2:
-                return new Decision(Command.SHIFT, UniversalDependencyType.ACL);
+                return new Decision(Command.SHIFT, UniversalDependencyType.DEP);
         }
         return null;
     }
