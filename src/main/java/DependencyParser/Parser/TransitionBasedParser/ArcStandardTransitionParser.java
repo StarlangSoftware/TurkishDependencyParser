@@ -9,10 +9,19 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class BasicTransitionParser extends TransitionParser {
+public class ArcStandardTransitionParser extends TransitionParser {
 
-    public BasicTransitionParser() {
+    public ArcStandardTransitionParser() {
         super();
+    }
+
+    private boolean checkForMoreRelation(ArrayList<Word> wordList, int id) {
+        for (Word word : wordList) {
+            if (((UniversalDependencyTreeBankWord) word).getRelation().to() == id) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public ArrayList<Command> simulateParse(UniversalDependencyTreeBankSentence sentence) {

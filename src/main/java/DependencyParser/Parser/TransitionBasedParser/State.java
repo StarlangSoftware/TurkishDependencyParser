@@ -47,6 +47,32 @@ public class State {
         }
     }
 
+    public void applyArcEagerLeftArc(UniversalDependencyType type) {
+        if (stack.size() > 0 && wordList.size() > 0) {
+            UniversalDependencyTreeBankWord lastElementOfStack = (UniversalDependencyTreeBankWord) stack.peek().getKey();
+            int index = wordList.get(0).getValue();
+            lastElementOfStack.setRelation(new UniversalDependencyRelation(index, type.toString()));
+            stack.pop();
+            relations.add(new AbstractMap.SimpleEntry<>(lastElementOfStack, new UniversalDependencyRelation(index, type.toString())));
+        }
+    }
+
+    public void applyArcEagerRightArc(UniversalDependencyType type) {
+        if (stack.size() > 0 && wordList.size() > 0) {
+            UniversalDependencyTreeBankWord firstElementOfWordList = (UniversalDependencyTreeBankWord) wordList.get(0).getKey();
+            int index = stack.peek().getValue();
+            firstElementOfWordList.setRelation(new UniversalDependencyRelation(index, type.toString()));
+            applyShift();
+            relations.add(new AbstractMap.SimpleEntry<>(firstElementOfWordList, new UniversalDependencyRelation(index, type.toString())));
+        }
+    }
+
+    public void reduce() {
+        if (stack.size() > 0) {
+            stack.pop();
+        }
+    }
+
     public Stack<AbstractMap.SimpleEntry<Word, Integer>> getStack() {
         return stack;
     }

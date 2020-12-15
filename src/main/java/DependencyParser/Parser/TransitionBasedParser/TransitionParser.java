@@ -1,22 +1,12 @@
 package DependencyParser.Parser.TransitionBasedParser;/* Created by oguzkeremyildiz on 5.12.2020 */
 
 import DependencyParser.Universal.*;
-import Dictionary.Word;
 
 import java.util.ArrayList;
 
 public abstract class TransitionParser {
 
     public TransitionParser() {
-    }
-
-    protected boolean checkForMoreRelation(ArrayList<Word> wordList, int id) {
-        for (Word word : wordList) {
-            if (((UniversalDependencyTreeBankWord) word).getRelation().to() == id) {
-                return false;
-            }
-        }
-        return true;
     }
 
     protected UniversalDependencyTreeBankSentence createResultSentence(UniversalDependencyTreeBankSentence universalDependencyTreeBankSentence) {
