@@ -7,5 +7,5 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public interface Oracle {
-    Decision makeDecision(Stack<AbstractMap.SimpleEntry<Word, Integer>> stack, ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList);
+    Decision makeDecision(Stack<AbstractMap.SimpleEntry<Word, Integer>> stack, ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList, TransitionSystem transitionSystem);
 }

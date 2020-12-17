@@ -73,29 +73,17 @@ public class State {
         }
     }
 
-    public Stack<AbstractMap.SimpleEntry<Word, Integer>> getStack() {
-        return stack;
-    }
-
-    public ArrayList<AbstractMap.SimpleEntry<Word, Integer>> getWordList() {
-        return wordList;
-    }
-
-    public ArrayList<AbstractMap.SimpleEntry<Word, UniversalDependencyRelation>> getRelations() {
-        return relations;
-    }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
         State o = new State(new Stack<>(), new ArrayList<>(), new ArrayList<>());
         for (AbstractMap.SimpleEntry<Word, Integer> element : stack) {
-            o.getStack().add(new AbstractMap.SimpleEntry<>(element.getKey().clone(), element.getValue()));
+            o.stack.add(new AbstractMap.SimpleEntry<>(element.getKey().clone(), element.getValue()));
         }
         for (AbstractMap.SimpleEntry<Word, Integer> word : wordList) {
-            o.getWordList().add(new AbstractMap.SimpleEntry<>(word.getKey().clone(), word.getValue()));
+            o.wordList.add(new AbstractMap.SimpleEntry<>(word.getKey().clone(), word.getValue()));
         }
         for (AbstractMap.SimpleEntry<Word, UniversalDependencyRelation> relation : relations) {
-            o.getRelations().add(new AbstractMap.SimpleEntry<>(relation.getKey().clone(), relation.getValue()));
+            o.relations.add(new AbstractMap.SimpleEntry<>(relation.getKey().clone(), relation.getValue()));
         }
         return o;
     }

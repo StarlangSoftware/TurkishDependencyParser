@@ -10,9 +10,17 @@ import java.util.Stack;
 
 public class RandomOracle implements Oracle {
     @Override
-    public Decision makeDecision(Stack<AbstractMap.SimpleEntry<Word, Integer>> stack, ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList) {
+    public Decision makeDecision(Stack<AbstractMap.SimpleEntry<Word, Integer>> stack, ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList, TransitionSystem transitionSystem) {
         Random random = new Random();
-        int command = random.nextInt(3);
+        int command = 4;
+        switch (transitionSystem){
+            case ARC_EAGER:
+                command = random.nextInt(4);
+                break;
+            case ARC_STANDARD:
+                command = random.nextInt(3);
+                break;
+        }
         int relation = random.nextInt(UniversalDependencyType.values().length);
         switch (command) {
             case 0:
