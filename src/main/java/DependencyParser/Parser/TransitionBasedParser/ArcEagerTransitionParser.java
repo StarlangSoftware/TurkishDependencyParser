@@ -1,5 +1,6 @@
 package DependencyParser.Parser.TransitionBasedParser;/* Created by oguzkeremyildiz on 14.12.2020 */
 
+import Classification.Instance.Instance;
 import DependencyParser.Universal.UniversalDependencyRelation;
 import DependencyParser.Universal.UniversalDependencyTreeBankSentence;
 import DependencyParser.Universal.UniversalDependencyTreeBankWord;
@@ -16,50 +17,52 @@ public class ArcEagerTransitionParser extends TransitionParser {
     }
 
     @Override
-    public ArrayList<Command> simulateParse(UniversalDependencyTreeBankSentence sentence) {
+    public ArrayList<Instance> simulateParse(UniversalDependencyTreeBankSentence sentence, int windowSize) {
         UniversalDependencyTreeBankWord top, first;
         UniversalDependencyRelation topRelation, firstRelation;
-        ArrayList<Command> commandList = new ArrayList<>();
-        ArrayList<Word> wordList = new ArrayList<>();
-        Stack<Word> stack = new Stack<>();
+        InstanceGenerator instanceGenerator = new SimpleInstanceGenerator();
+        ArrayList<Instance> instanceList = new ArrayList<>();
+        ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList = new ArrayList<>();
+        Stack<AbstractMap.SimpleEntry<Word, Integer>> stack = new Stack<>();
         for (int j = 0; j < sentence.wordCount(); j++) {
-            wordList.add(sentence.getWord(j));
+            wordList.add(new AbstractMap.SimpleEntry<>(sentence.getWord(j), j + 1));
         }
-        stack.add(new UniversalDependencyTreeBankWord(0, "root", "", null, "", null, new UniversalDependencyRelation(-1, ""), "", ""));
+        stack.add(new AbstractMap.SimpleEntry<>(new UniversalDependencyTreeBankWord(0, "root", "", null, "", null, new UniversalDependencyRelation(-1, ""), "", ""), 0));
+        State state = new State(stack, wordList, new ArrayList<>());
         if (wordList.size() > 0) {
+            instanceList.add(instanceGenerator.generate(state, windowSize, "Shift"));
             stack.add(wordList.remove(0));
-            commandList.add(Command.SHIFT);
             if (wordList.size() > 1) {
+                instanceList.add(instanceGenerator.generate(state, windowSize, "Shift"));
                 stack.add(wordList.remove(0));
-                commandList.add(Command.SHIFT);
             }
             while (wordList.size() > 0 || stack.size() > 1) {
                 if (!wordList.isEmpty()) {
-                    first = ((UniversalDependencyTreeBankWord) wordList.get(0));
+                    first = ((UniversalDependencyTreeBankWord) wordList.get(0).getKey());
                     firstRelation = first.getRelation();
                 } else {
                     first = null;
                     firstRelation = null;
                 }
-                top = ((UniversalDependencyTreeBankWord) stack.peek());
+                top = ((UniversalDependencyTreeBankWord) stack.peek().getKey());
                 topRelation = top.getRelation();
                 if (stack.size() > 1) {
                     if (firstRelation != null && firstRelation.to() == top.getId()) {
-                        commandList.add(Command.RIGHTARC);
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "RightArc"));
                         stack.add(wordList.remove(0));
                     } else if (first != null && topRelation.to() == first.getId()) {
-                        commandList.add(Command.LEFTARC);
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "LeftArc"));
                         stack.pop();
                     } else if (wordList.size() > 0) {
-                        commandList.add(Command.SHIFT);
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "Shift"));
                         stack.add(wordList.remove(0));
                     } else {
-                        commandList.add(Command.REDUCE);
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "Reduce"));
                         stack.pop();
                     }
                 } else {
                     if (wordList.size() > 0) {
-                        commandList.add(Command.SHIFT);
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "Shift"));
                         stack.add(wordList.remove(0));
                     } else {
                         break;
@@ -67,7 +70,7 @@ public class ArcEagerTransitionParser extends TransitionParser {
                 }
             }
         }
-        return commandList;
+        return instanceList;
     }
 
     @Override
