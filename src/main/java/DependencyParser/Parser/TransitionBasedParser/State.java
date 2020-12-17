@@ -73,6 +73,21 @@ public class State {
         }
     }
 
+    public Word getStackWord(int index) {
+        int size = stack.size() - 1;
+        if (size - index < 0) {
+            return null;
+        }
+        return stack.get(size - index).getKey();
+    }
+
+    public Word getWordListWord(int index) {
+        if (index > wordList.size() - 1) {
+            return null;
+        }
+        return wordList.get(index).getKey();
+    }
+
     @Override
     public Object clone() throws CloneNotSupportedException {
         State o = new State(new Stack<>(), new ArrayList<>(), new ArrayList<>());

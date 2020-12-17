@@ -1,5 +1,6 @@
 package DependencyParser.Parser.TransitionBasedParser;/* Created by oguzkeremyildiz on 5.12.2020 */
 
+import Classification.Instance.Instance;
 import DependencyParser.Universal.*;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public abstract class TransitionParser {
         return sentence;
     }
 
-    public abstract ArrayList<Command> simulateParse(UniversalDependencyTreeBankSentence sentence);
+    public abstract ArrayList<Instance> simulateParse(UniversalDependencyTreeBankSentence sentence, int windowSize);
 
     public abstract UniversalDependencyTreeBankSentence dependencyParse(UniversalDependencyTreeBankSentence universalDependencyTreeBankSentence, Oracle oracle);
 

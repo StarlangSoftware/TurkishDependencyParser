@@ -1,5 +1,6 @@
 package DependencyParser.Parser.TransitionBasedParser;/* Created by oguzkeremyildiz on 14.12.2020 */
 
+import Classification.Instance.Instance;
 import DependencyParser.Universal.UniversalDependencyRelation;
 import DependencyParser.Universal.UniversalDependencyTreeBankSentence;
 import DependencyParser.Universal.UniversalDependencyTreeBankWord;
@@ -15,47 +16,49 @@ public class ArcStandardTransitionParser extends TransitionParser {
         super();
     }
 
-    private boolean checkForMoreRelation(ArrayList<Word> wordList, int id) {
-        for (Word word : wordList) {
-            if (((UniversalDependencyTreeBankWord) word).getRelation().to() == id) {
+    private boolean checkForMoreRelation(ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList, int id) {
+        for (AbstractMap.SimpleEntry<Word, Integer> word : wordList) {
+            if (((UniversalDependencyTreeBankWord) word.getKey()).getRelation().to() == id) {
                 return false;
             }
         }
         return true;
     }
 
-    public ArrayList<Command> simulateParse(UniversalDependencyTreeBankSentence sentence) {
+    public ArrayList<Instance> simulateParse(UniversalDependencyTreeBankSentence sentence, int windowSize) {
         UniversalDependencyTreeBankWord top, beforeTop;
         UniversalDependencyRelation topRelation, beforeTopRelation;
-        ArrayList<Command> commandList = new ArrayList<>();
-        ArrayList<Word> wordList = new ArrayList<>();
-        Stack<Word> stack = new Stack<>();
+        InstanceGenerator instanceGenerator = new SimpleInstanceGenerator();
+        ArrayList<Instance> instanceList = new ArrayList<>();
+        ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList = new ArrayList<>();
+        Stack<AbstractMap.SimpleEntry<Word, Integer>> stack = new Stack<>();
         for (int j = 0; j < sentence.wordCount(); j++) {
-            wordList.add(sentence.getWord(j));
+            wordList.add(new AbstractMap.SimpleEntry<>(sentence.getWord(j), j + 1));
         }
-        stack.add(new UniversalDependencyTreeBankWord(0, "root", "", null, "", null, new UniversalDependencyRelation(-1, ""), "", ""));
+        stack.add(new AbstractMap.SimpleEntry<>(new UniversalDependencyTreeBankWord(0, "root", "", null, "", null, new UniversalDependencyRelation(-1, ""), "", ""), 0));
+        State state = new State(stack, wordList, new ArrayList<>());
         if (wordList.size() > 0) {
+            instanceList.add(instanceGenerator.generate(state, windowSize, "Shift"));
             stack.add(wordList.remove(0));
             if (wordList.size() > 1) {
+                instanceList.add(instanceGenerator.generate(state, windowSize, "Shift"));
                 stack.add(wordList.remove(0));
-                commandList.add(Command.SHIFT);
             }
-            commandList.add(Command.SHIFT);
             while (wordList.size() > 0 || stack.size() > 1) {
-                top = ((UniversalDependencyTreeBankWord) stack.peek());
+                top = ((UniversalDependencyTreeBankWord) stack.peek().getKey());
                 topRelation = top.getRelation();
                 if (stack.size() > 1) {
-                    beforeTop = ((UniversalDependencyTreeBankWord) stack.get(stack.size() - 2));
+                    beforeTop = ((UniversalDependencyTreeBankWord) stack.get(stack.size() - 2).getKey());
                     beforeTopRelation = beforeTop.getRelation();
                     if (beforeTop.getId() == topRelation.to() && checkForMoreRelation(wordList, top.getId())) {
-                        commandList.add(Command.RIGHTARC);
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "RightArc"));
                         stack.pop();
                     } else if (top.getId() == beforeTopRelation.to()) {
-                        commandList.add(Command.LEFTARC);
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "LeftArc"));
                         stack.remove(stack.size() - 2);
                     } else {
                         if (wordList.size() > 0) {
-                            commandList.add(Command.SHIFT);
+                            instanceList.add(instanceGenerator.generate(state, windowSize, "Shift"));
                             stack.add(wordList.remove(0));
                         } else {
                             break;
@@ -63,7 +66,7 @@ public class ArcStandardTransitionParser extends TransitionParser {
                     }
                 } else {
                     if (wordList.size() > 0) {
-                        commandList.add(Command.SHIFT);
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "Shift"));
                         stack.add(wordList.remove(0));
                     } else {
                         break;
@@ -71,7 +74,7 @@ public class ArcStandardTransitionParser extends TransitionParser {
                 }
             }
         }
-        return commandList;
+        return instanceList;
     }
 
     public UniversalDependencyTreeBankSentence dependencyParse(UniversalDependencyTreeBankSentence universalDependencyTreeBankSentence, Oracle oracle) {
