@@ -10,7 +10,7 @@ import java.util.Stack;
 
 public class RandomOracle implements Oracle {
     @Override
-    public Decision makeDecision(Stack<AbstractMap.SimpleEntry<Word, Integer>> stack, ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList, TransitionSystem transitionSystem) {
+    public Decision makeDecision(State state, TransitionSystem transitionSystem) {
         Random random = new Random();
         int command = 4;
         switch (transitionSystem){
@@ -24,12 +24,19 @@ public class RandomOracle implements Oracle {
         int relation = random.nextInt(UniversalDependencyType.values().length);
         switch (command) {
             case 0:
-                return new Decision(Command.LEFTARC, UniversalDependencyType.values()[relation]);
+                return new Decision(Command.LEFTARC, UniversalDependencyType.values()[relation], 0);
             case 1:
-                return new Decision(Command.RIGHTARC, UniversalDependencyType.values()[relation]);
+                return new Decision(Command.RIGHTARC, UniversalDependencyType.values()[relation], 0);
             case 2:
-                return new Decision(Command.SHIFT, UniversalDependencyType.DEP);
+                return new Decision(Command.SHIFT, UniversalDependencyType.DEP, 0);
+            case 3:
+                return new Decision(Command.REDUCE, UniversalDependencyType.DEP, 0);
         }
+        return null;
+    }
+
+    @Override
+    public ArrayList<Decision> scoreDecisions(State state, TransitionSystem transitionSystem) {
         return null;
     }
 }

@@ -84,7 +84,7 @@ public class ArcStandardTransitionParser extends TransitionParser {
         stack.add(new AbstractMap.SimpleEntry<>(new Word("root"), 0));
         State state = new State(stack, wordList, new ArrayList<>());
         while (wordList.size() > 0 || stack.size() > 1) {
-            Decision decision = oracle.makeDecision(stack, wordList, TransitionSystem.ARC_STANDARD);
+            Decision decision = oracle.makeDecision(state, TransitionSystem.ARC_STANDARD);
             switch (decision.getCommand()) {
                 case SHIFT:
                     state.applyShift();

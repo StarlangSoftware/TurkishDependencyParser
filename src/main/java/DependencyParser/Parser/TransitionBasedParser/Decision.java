@@ -6,10 +6,12 @@ public class Decision {
 
     private Command command;
     private UniversalDependencyType relation;
+    private double point;
 
-    public Decision(Command command, UniversalDependencyType relation) {
+    public Decision(Command command, UniversalDependencyType relation, double point) {
         this.command = command;
         this.relation = relation;
+        this.point = point;
     }
 
     public Command getCommand() {
@@ -18,5 +20,9 @@ public class Decision {
 
     public UniversalDependencyType getRelation() {
         return relation;
+    }
+
+    public double getPoint() {
+        return point;
     }
 }
