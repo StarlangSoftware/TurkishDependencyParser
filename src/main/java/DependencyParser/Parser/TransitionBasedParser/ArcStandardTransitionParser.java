@@ -51,10 +51,10 @@ public class ArcStandardTransitionParser extends TransitionParser {
                     beforeTop = ((UniversalDependencyTreeBankWord) stack.get(stack.size() - 2).getKey());
                     beforeTopRelation = beforeTop.getRelation();
                     if (beforeTop.getId() == topRelation.to() && checkForMoreRelation(wordList, top.getId())) {
-                        instanceList.add(instanceGenerator.generate(state, windowSize, "RightArc"));
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "RightArc(" + topRelation.toString() + ")"));
                         stack.pop();
                     } else if (top.getId() == beforeTopRelation.to()) {
-                        instanceList.add(instanceGenerator.generate(state, windowSize, "LeftArc"));
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "LeftArc(" + beforeTopRelation.toString() + ")"));
                         stack.remove(stack.size() - 2);
                     } else {
                         if (wordList.size() > 0) {

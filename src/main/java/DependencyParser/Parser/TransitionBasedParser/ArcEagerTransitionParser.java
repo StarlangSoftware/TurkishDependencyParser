@@ -48,10 +48,10 @@ public class ArcEagerTransitionParser extends TransitionParser {
                 topRelation = top.getRelation();
                 if (stack.size() > 1) {
                     if (firstRelation != null && firstRelation.to() == top.getId()) {
-                        instanceList.add(instanceGenerator.generate(state, windowSize, "RightArc"));
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "RightArc(" + firstRelation.toString() + ")"));
                         stack.add(wordList.remove(0));
                     } else if (first != null && topRelation.to() == first.getId()) {
-                        instanceList.add(instanceGenerator.generate(state, windowSize, "LeftArc"));
+                        instanceList.add(instanceGenerator.generate(state, windowSize, "LeftArc(" + topRelation.toString() + ")"));
                         stack.pop();
                     } else if (wordList.size() > 0) {
                         instanceList.add(instanceGenerator.generate(state, windowSize, "Shift"));

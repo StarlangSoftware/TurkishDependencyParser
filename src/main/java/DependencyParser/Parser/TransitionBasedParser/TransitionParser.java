@@ -1,5 +1,6 @@
 package DependencyParser.Parser.TransitionBasedParser;/* Created by oguzkeremyildiz on 5.12.2020 */
 
+import Classification.DataSet.DataSet;
 import Classification.Instance.Instance;
 import DependencyParser.Universal.*;
 
@@ -17,6 +18,14 @@ public abstract class TransitionParser {
             sentence.addWord(new UniversalDependencyTreeBankWord(word.getId(), word.getName(), word.getLemma(), word.getUpos(), word.getXpos(), word.getFeatures(), null, word.getDeps(), word.getMisc()));
         }
         return sentence;
+    }
+
+    public DataSet simulateParse(UniversalDependencyTreeBankCorpus corpus, int windowSize) {
+        DataSet dataSet = new DataSet();
+        for (int i = 0; i < corpus.sentenceCount(); i++) {
+            dataSet.addInstanceList(simulateParse((UniversalDependencyTreeBankSentence) corpus.getSentence(i), windowSize));
+        }
+        return dataSet;
     }
 
     public abstract ArrayList<Instance> simulateParse(UniversalDependencyTreeBankSentence sentence, int windowSize);
