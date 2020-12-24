@@ -67,10 +67,62 @@ public class State {
         }
     }
 
-    public void reduce() {
+    public void applyReduce() {
         if (stack.size() > 0) {
             stack.pop();
         }
+    }
+
+    public void apply(Command command, UniversalDependencyType type, TransitionSystem transitionSystem) {
+        switch (transitionSystem) {
+            case ARC_STANDARD:
+                switch (command) {
+                    case LEFTARC:
+                        applyLeftArc(type);
+                        break;
+                    case RIGHTARC:
+                        applyRightArc(type);
+                        break;
+                    case SHIFT:
+                        applyShift();
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case ARC_EAGER:
+                switch (command) {
+                    case LEFTARC:
+                        applyArcEagerLeftArc(type);
+                        break;
+                    case RIGHTARC:
+                        applyArcEagerRightArc(type);
+                        break;
+                    case SHIFT:
+                        applyShift();
+                        break;
+                    case REDUCE:
+                        applyReduce();
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    public int relationSize() {
+        return relations.size();
+    }
+
+    public int wordListSize() {
+        return wordList.size();
+    }
+
+    public int stackSize() {
+        return stack.size();
     }
 
     public Word getStackWord(int index) {

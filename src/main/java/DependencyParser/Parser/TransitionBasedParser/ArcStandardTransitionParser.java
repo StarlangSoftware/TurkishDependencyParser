@@ -79,14 +79,8 @@ public class ArcStandardTransitionParser extends TransitionParser {
 
     public UniversalDependencyTreeBankSentence dependencyParse(UniversalDependencyTreeBankSentence universalDependencyTreeBankSentence, Oracle oracle) {
         UniversalDependencyTreeBankSentence sentence = createResultSentence(universalDependencyTreeBankSentence);
-        ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList = new ArrayList<>();
-        for (int i = 0; i < sentence.wordCount(); i++) {
-            wordList.add(new AbstractMap.SimpleEntry<>(sentence.getWord(i), i + 1));
-        }
-        Stack<AbstractMap.SimpleEntry<Word, Integer>> stack = new Stack<>();
-        stack.add(new AbstractMap.SimpleEntry<>(new Word("root"), 0));
-        State state = new State(stack, wordList, new ArrayList<>());
-        while (wordList.size() > 0 || stack.size() > 1) {
+        State state = initialState(sentence);
+        while (state.wordListSize() > 0 || state.stackSize() > 1) {
             Decision decision = oracle.makeDecision(state, TransitionSystem.ARC_STANDARD);
             switch (decision.getCommand()) {
                 case SHIFT:
