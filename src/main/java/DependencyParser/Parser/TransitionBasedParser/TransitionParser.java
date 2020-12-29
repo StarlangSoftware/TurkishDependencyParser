@@ -3,11 +3,8 @@ package DependencyParser.Parser.TransitionBasedParser;/* Created by oguzkeremyil
 import Classification.DataSet.DataSet;
 import Classification.Instance.Instance;
 import DependencyParser.Universal.*;
-import Dictionary.Word;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.*;
 
 public abstract class TransitionParser {
 
@@ -45,25 +42,35 @@ public abstract class TransitionParser {
     }
 
     protected State initialState(UniversalDependencyTreeBankSentence sentence) {
-        ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList = new ArrayList<>();
+        ArrayList<AbstractMap.SimpleEntry<UniversalDependencyTreeBankWord, Integer>> wordList = new ArrayList<>();
         for (int i = 0; i < sentence.wordCount(); i++) {
-            wordList.add(new AbstractMap.SimpleEntry<>(sentence.getWord(i), i + 1));
+            wordList.add(new AbstractMap.SimpleEntry<>((UniversalDependencyTreeBankWord) sentence.getWord(i), i + 1));
         }
-        Stack<AbstractMap.SimpleEntry<Word, Integer>> stack = new Stack<>();
-        stack.add(new AbstractMap.SimpleEntry<>(new Word("root"), 0));
+        Stack<AbstractMap.SimpleEntry<UniversalDependencyTreeBankWord, Integer>> stack = new Stack<>();
+        stack.add(new AbstractMap.SimpleEntry<>(new UniversalDependencyTreeBankWord(0, "root", "", null, "", null, new UniversalDependencyRelation(-1, ""), "", ""), 0));
         return new State(stack, wordList, new ArrayList<>());
     }
 
-    private ArrayList<AbstractMap.SimpleEntry<Command, UniversalDependencyType>> constructCandidates(TransitionSystem transitionSystem) {
+    private ArrayList<AbstractMap.SimpleEntry<Command, UniversalDependencyType>> constructCandidates(TransitionSystem transitionSystem, State state) {
+        if (state.stackSize() == 1 && state.wordListSize() == 0) {
+            return new ArrayList<>();
+        }
         ArrayList<AbstractMap.SimpleEntry<Command, UniversalDependencyType>> subsets = new ArrayList<>();
-        subsets.add(new AbstractMap.SimpleEntry<>(Command.SHIFT, UniversalDependencyType.DEP));
-        if (transitionSystem == TransitionSystem.ARC_EAGER) {
+        if (state.wordListSize() > 0) {
+            subsets.add(new AbstractMap.SimpleEntry<>(Command.SHIFT, UniversalDependencyType.DEP));
+        }
+        if (transitionSystem == TransitionSystem.ARC_EAGER && state.stackSize() > 0) {
             subsets.add(new AbstractMap.SimpleEntry<>(Command.REDUCE, UniversalDependencyType.DEP));
         }
         for (int i = 0; i < UniversalDependencyRelation.universalDependencyTypes.length; i++) {
             UniversalDependencyType type = UniversalDependencyRelation.getDependencyTag(UniversalDependencyRelation.universalDependencyTypes[i]);
-            subsets.add(new AbstractMap.SimpleEntry<>(Command.LEFTARC, type));
-            subsets.add(new AbstractMap.SimpleEntry<>(Command.RIGHTARC, type));
+            if (transitionSystem == TransitionSystem.ARC_STANDARD && state.stackSize() > 1) {
+                subsets.add(new AbstractMap.SimpleEntry<>(Command.LEFTARC, type));
+                subsets.add(new AbstractMap.SimpleEntry<>(Command.RIGHTARC, type));
+            } else if (transitionSystem == TransitionSystem.ARC_EAGER && state.stackSize() > 0 && state.wordListSize() > 0) {
+                subsets.add(new AbstractMap.SimpleEntry<>(Command.LEFTARC, type));
+                subsets.add(new AbstractMap.SimpleEntry<>(Command.RIGHTARC, type));
+            }
         }
         return subsets;
     }
@@ -75,14 +82,13 @@ public abstract class TransitionParser {
         agenda.updateAgenda(oracle, (State) initialState.clone());
         while (checkStates(agenda)) {
             for (State state : agenda.getKeySet()) {
-                State oldState = (State) state.clone();
-                ArrayList<AbstractMap.SimpleEntry<Command, UniversalDependencyType>> subsets = constructCandidates(transitionSystem);
+                ArrayList<AbstractMap.SimpleEntry<Command, UniversalDependencyType>> subsets = constructCandidates(transitionSystem, state);
                 for (AbstractMap.SimpleEntry<Command, UniversalDependencyType> subset : subsets) {
                     Command command = subset.getKey();
                     UniversalDependencyType type = subset.getValue();
-                    state.apply(command, type, transitionSystem);
-                    agenda.updateAgenda(oracle, (State) state.clone());
-                    state = oldState;
+                    State cloneState = (State) state.clone();
+                    cloneState.apply(command, type, transitionSystem);
+                    agenda.updateAgenda(oracle,(State) cloneState.clone());
                 }
             }
         }

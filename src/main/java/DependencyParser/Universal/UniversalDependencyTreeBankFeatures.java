@@ -40,4 +40,20 @@ public class UniversalDependencyTreeBankFeatures {
         }
         return result;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof UniversalDependencyTreeBankFeatures)) {
+            return false;
+        }
+        UniversalDependencyTreeBankFeatures features = (UniversalDependencyTreeBankFeatures) obj;
+        return this.featureList.equals(features.featureList);
+    }
+
+    @Override
+    protected UniversalDependencyTreeBankFeatures clone() throws CloneNotSupportedException {
+        UniversalDependencyTreeBankFeatures features = new UniversalDependencyTreeBankFeatures(this.toString());
+        features.featureList = (HashMap<String, String>) this.featureList.clone();
+        return features;
+    }
 }

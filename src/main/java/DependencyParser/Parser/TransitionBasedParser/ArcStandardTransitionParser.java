@@ -4,7 +4,6 @@ import Classification.Instance.Instance;
 import DependencyParser.Universal.UniversalDependencyRelation;
 import DependencyParser.Universal.UniversalDependencyTreeBankSentence;
 import DependencyParser.Universal.UniversalDependencyTreeBankWord;
-import Dictionary.Word;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -16,9 +15,9 @@ public class ArcStandardTransitionParser extends TransitionParser {
         super();
     }
 
-    private boolean checkForMoreRelation(ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList, int id) {
-        for (AbstractMap.SimpleEntry<Word, Integer> word : wordList) {
-            if (((UniversalDependencyTreeBankWord) word.getKey()).getRelation().to() == id) {
+    private boolean checkForMoreRelation(ArrayList<AbstractMap.SimpleEntry<UniversalDependencyTreeBankWord, Integer>> wordList, int id) {
+        for (AbstractMap.SimpleEntry<UniversalDependencyTreeBankWord, Integer> word : wordList) {
+            if (word.getKey().getRelation().to() == id) {
                 return false;
             }
         }
@@ -30,10 +29,10 @@ public class ArcStandardTransitionParser extends TransitionParser {
         UniversalDependencyRelation topRelation, beforeTopRelation;
         InstanceGenerator instanceGenerator = new SimpleInstanceGenerator();
         ArrayList<Instance> instanceList = new ArrayList<>();
-        ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList = new ArrayList<>();
-        Stack<AbstractMap.SimpleEntry<Word, Integer>> stack = new Stack<>();
+        ArrayList<AbstractMap.SimpleEntry<UniversalDependencyTreeBankWord, Integer>> wordList = new ArrayList<>();
+        Stack<AbstractMap.SimpleEntry<UniversalDependencyTreeBankWord, Integer>> stack = new Stack<>();
         for (int j = 0; j < sentence.wordCount(); j++) {
-            wordList.add(new AbstractMap.SimpleEntry<>(sentence.getWord(j), j + 1));
+            wordList.add(new AbstractMap.SimpleEntry<>((UniversalDependencyTreeBankWord) sentence.getWord(j), j + 1));
         }
         stack.add(new AbstractMap.SimpleEntry<>(new UniversalDependencyTreeBankWord(0, "root", "", null, "", null, new UniversalDependencyRelation(-1, ""), "", ""), 0));
         State state = new State(stack, wordList, new ArrayList<>());
@@ -45,10 +44,10 @@ public class ArcStandardTransitionParser extends TransitionParser {
                 stack.add(wordList.remove(0));
             }
             while (wordList.size() > 0 || stack.size() > 1) {
-                top = ((UniversalDependencyTreeBankWord) stack.peek().getKey());
+                top = stack.peek().getKey();
                 topRelation = top.getRelation();
                 if (stack.size() > 1) {
-                    beforeTop = ((UniversalDependencyTreeBankWord) stack.get(stack.size() - 2).getKey());
+                    beforeTop = stack.get(stack.size() - 2).getKey();
                     beforeTopRelation = beforeTop.getRelation();
                     if (beforeTop.getId() == topRelation.to() && checkForMoreRelation(wordList, top.getId())) {
                         instanceList.add(instanceGenerator.generate(state, windowSize, "RightArc(" + topRelation.toString() + ")"));

@@ -76,4 +76,29 @@ public class UniversalDependencyRelation extends DependencyRelation {
         return universalDependencyTypes[universalDependencyType.ordinal()];
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof UniversalDependencyRelation)) {
+            return false;
+        }
+        UniversalDependencyRelation relation = (UniversalDependencyRelation) obj;
+        return handleUniversalDependencyType(this.universalDependencyType, relation.universalDependencyType) && this.toWord == relation.toWord;
+    }
+
+    private boolean handleUniversalDependencyType(UniversalDependencyType type1, UniversalDependencyType type2) {
+        if (type1 == null && type2 == null) {
+            return true;
+        } else if (type1 != null && type2 != null) {
+            return type1.equals(type2);
+        }
+        return false;
+    }
+
+    @Override
+    protected UniversalDependencyRelation clone() throws CloneNotSupportedException {
+        UniversalDependencyRelation relation = new UniversalDependencyRelation(toWord, this.toString());
+        relation.universalDependencyType = this.universalDependencyType;
+        relation.toWord = this.toWord;
+        return relation;
+    }
 }

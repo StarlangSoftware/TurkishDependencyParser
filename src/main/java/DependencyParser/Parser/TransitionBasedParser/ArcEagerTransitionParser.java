@@ -22,10 +22,10 @@ public class ArcEagerTransitionParser extends TransitionParser {
         UniversalDependencyRelation topRelation, firstRelation;
         InstanceGenerator instanceGenerator = new SimpleInstanceGenerator();
         ArrayList<Instance> instanceList = new ArrayList<>();
-        ArrayList<AbstractMap.SimpleEntry<Word, Integer>> wordList = new ArrayList<>();
-        Stack<AbstractMap.SimpleEntry<Word, Integer>> stack = new Stack<>();
+        ArrayList<AbstractMap.SimpleEntry<UniversalDependencyTreeBankWord, Integer>> wordList = new ArrayList<>();
+        Stack<AbstractMap.SimpleEntry<UniversalDependencyTreeBankWord, Integer>> stack = new Stack<>();
         for (int j = 0; j < sentence.wordCount(); j++) {
-            wordList.add(new AbstractMap.SimpleEntry<>(sentence.getWord(j), j + 1));
+            wordList.add(new AbstractMap.SimpleEntry<>((UniversalDependencyTreeBankWord) sentence.getWord(j), j + 1));
         }
         stack.add(new AbstractMap.SimpleEntry<>(new UniversalDependencyTreeBankWord(0, "root", "", null, "", null, new UniversalDependencyRelation(-1, ""), "", ""), 0));
         State state = new State(stack, wordList, new ArrayList<>());
@@ -38,13 +38,13 @@ public class ArcEagerTransitionParser extends TransitionParser {
             }
             while (wordList.size() > 0 || stack.size() > 1) {
                 if (!wordList.isEmpty()) {
-                    first = ((UniversalDependencyTreeBankWord) wordList.get(0).getKey());
+                    first = wordList.get(0).getKey();
                     firstRelation = first.getRelation();
                 } else {
                     first = null;
                     firstRelation = null;
                 }
-                top = ((UniversalDependencyTreeBankWord) stack.peek().getKey());
+                top = stack.peek().getKey();
                 topRelation = top.getRelation();
                 if (stack.size() > 1) {
                     if (firstRelation != null && firstRelation.to() == top.getId()) {

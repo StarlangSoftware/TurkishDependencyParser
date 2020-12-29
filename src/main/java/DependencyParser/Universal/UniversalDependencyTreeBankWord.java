@@ -73,4 +73,66 @@ public class UniversalDependencyTreeBankWord extends Word {
                 relation.toString().toLowerCase() + "\t" + deps + "\t" + misc;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof UniversalDependencyTreeBankWord)) {
+            return false;
+        }
+        UniversalDependencyTreeBankWord word = (UniversalDependencyTreeBankWord) obj;
+        return this.id == word.id && this.lemma.equals(word.lemma) && handleUpos(this.upos, word.upos) && this.xpos.equals(word.xpos) && handleFeatures(this.features, word.features) && handleRelation(this.relation, word.relation) && this.deps.equals(word.deps) && this.misc.equals(word.misc);
+    }
+
+    private boolean handleUpos(UniversalDependencyPosType upos1, UniversalDependencyPosType upos2) {
+        if (upos1 == null && upos2 == null) {
+            return true;
+        } else if (upos1 != null && upos2 != null) {
+            return upos1.equals(upos2);
+        }
+        return false;
+    }
+
+    private boolean handleFeatures(UniversalDependencyTreeBankFeatures features1, UniversalDependencyTreeBankFeatures features2) {
+        if (features1 == null && features2 == null) {
+            return true;
+        } else if (features1 != null && features2 != null) {
+            return features1.equals(features2);
+        }
+        return false;
+    }
+
+    private boolean handleRelation(UniversalDependencyRelation relation1, UniversalDependencyRelation relation2) {
+        if (relation1 == null && relation2 == null) {
+            return true;
+        } else if (relation1 != null && relation2 != null) {
+            return relation1.equals(relation2);
+        }
+        return false;
+    }
+
+    @Override
+    public UniversalDependencyTreeBankWord clone() {
+        UniversalDependencyTreeBankWord word = new UniversalDependencyTreeBankWord(0, "", "", null, "", null, null, "", "");
+        word.id = this.id;
+        word.name = this.name;
+        word.lemma = this.lemma;
+        word.upos = this.upos;
+        word.xpos = this.xpos;
+        try {
+            word.features = this.features.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        if (relation != null) {
+            try {
+                word.relation = this.relation.clone();
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
+        } else {
+            relation = null;
+        }
+        word.deps = this.deps;
+        word.misc = this.misc;
+        return word;
+    }
 }

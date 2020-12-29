@@ -1,15 +1,15 @@
 package DependencyParser.Parser.TransitionBasedParser;/* Created by oguzkeremyildiz on 23.12.2020 */
 
-import java.util.HashMap;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Agenda {
 
-    private HashMap<State, Double> agenda;
+    private ConcurrentHashMap<State, Double> agenda;
     private int beamSize;
 
     public Agenda(int beamSize) throws CloneNotSupportedException {
-        agenda = new HashMap<>();
+        agenda = new ConcurrentHashMap<>();
         this.beamSize = beamSize;
     }
 
@@ -18,6 +18,9 @@ public class Agenda {
     }
 
     public void updateAgenda(ScoringOracle oracle, State current) {
+        if (agenda.containsKey(current)) {
+            return;
+        }
         double point = oracle.score(current);
         if (agenda.size() < beamSize) {
             agenda.put(current, point);
