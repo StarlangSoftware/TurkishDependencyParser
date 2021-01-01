@@ -111,12 +111,7 @@ public class UniversalDependencyTreeBankWord extends Word {
 
     @Override
     public UniversalDependencyTreeBankWord clone() {
-        UniversalDependencyTreeBankWord word = new UniversalDependencyTreeBankWord(0, "", "", null, "", null, null, "", "");
-        word.id = this.id;
-        word.name = this.name;
-        word.lemma = this.lemma;
-        word.upos = this.upos;
-        word.xpos = this.xpos;
+        UniversalDependencyTreeBankWord word = new UniversalDependencyTreeBankWord(id, name, lemma, upos, xpos, null, null, deps, misc);
         try {
             word.features = this.features.clone();
         } catch (CloneNotSupportedException e) {
@@ -131,8 +126,6 @@ public class UniversalDependencyTreeBankWord extends Word {
         } else {
             relation = null;
         }
-        word.deps = this.deps;
-        word.misc = this.misc;
         return word;
     }
 }

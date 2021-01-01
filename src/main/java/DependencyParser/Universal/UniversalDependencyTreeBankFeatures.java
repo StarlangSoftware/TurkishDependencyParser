@@ -52,8 +52,6 @@ public class UniversalDependencyTreeBankFeatures {
 
     @Override
     protected UniversalDependencyTreeBankFeatures clone() throws CloneNotSupportedException {
-        UniversalDependencyTreeBankFeatures features = new UniversalDependencyTreeBankFeatures(this.toString());
-        features.featureList = (HashMap<String, String>) this.featureList.clone();
-        return features;
+        return new UniversalDependencyTreeBankFeatures(this.toString());
     }
 }

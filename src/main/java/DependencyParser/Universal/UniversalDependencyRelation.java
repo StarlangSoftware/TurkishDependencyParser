@@ -96,9 +96,6 @@ public class UniversalDependencyRelation extends DependencyRelation {
 
     @Override
     protected UniversalDependencyRelation clone() throws CloneNotSupportedException {
-        UniversalDependencyRelation relation = new UniversalDependencyRelation(toWord, this.toString());
-        relation.universalDependencyType = this.universalDependencyType;
-        relation.toWord = this.toWord;
-        return relation;
+        return new UniversalDependencyRelation(toWord, this.toString());
     }
 }
