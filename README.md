@@ -1,6 +1,6 @@
 For Developers
 ============
-You can also see either [Python](https://github.com/olcaytaner/TurkishDependencyParser-Py), [C++](https://github.com/olcaytaner/TurkishDependencyParser-CPP), or [C#](https://github.com/olcaytaner/TurkishDependencyParser-CS) repository.
+You can also see either [Python](https://github.com/olcaytaner/TurkishDependencyParser-Py), [Cython](https://github.com/olcaytaner/TurkishDependencyParser-Cy), [C++](https://github.com/olcaytaner/TurkishDependencyParser-CPP), or [C#](https://github.com/olcaytaner/TurkishDependencyParser-CS) repository.
 
 ## Requirements
 
