@@ -6,10 +6,20 @@ public class UniversalDependencyRelation extends DependencyRelation {
 
     private UniversalDependencyType universalDependencyType;
 
-    public static final String[] universalDependencyTypes = {"ACL", "ADVCL", "ADVMOD", "AMOD", "APPOS", "AUX",
-            "CASE", "CC", "CCOMP", "CLF", "COMPOUND", "CONJ", "COP", "CSUBJ", "DEP", "DET", "DISCOURSE", "DISLOCATED",
-            "EXPL", "FIXED", "FLAT", "GOESWITH", "IOBJ", "LIST", "MARK", "NMOD", "NSUBJ", "NUMMOD", "OBJ", "OBL", "ORPHAN",
-            "PARATAXIS", "PUNCT", "REPARANDUM", "ROOT", "VOCATIVE", "XCOMP"};
+    public static final String[] universalDependencyTypes = {"ACL", "ADVCL",
+            "ADVMOD", "AMOD", "APPOS", "AUX", "CASE",
+            "CC", "CCOMP", "CLF", "COMPOUND", "CONJ",
+            "COP", "CSUBJ", "DEP", "DET", "DISCOURSE",
+            "DISLOCATED", "EXPL", "FIXED", "FLAT",
+            "GOESWITH", "IOBJ", "LIST", "MARK", "NMOD",
+            "NSUBJ", "NUMMOD", "OBJ", "OBL", "ORPHAN",
+            "PARATAXIS", "PUNCT", "REPARANDUM", "ROOT",
+            "VOCATIVE", "XCOMP", "ACL:RELCL", "AUX:PASS",
+            "CC:PRECONJ", "COMPOUND:PRT", "DET:PREDET", "FLAT:FOREIGN",
+            "NSUBJ:PASS", "CSUBJ:PASS", "NMOD:NPMOD", "NMOD:POSS",
+            "NMOD:TMOD", "ADVMOD:EMPH", "AUX:Q", "COMPOUND:LVC",
+            "COMPOUND:REDUP", "CSUBJ:COP", "NMOD:COMP", "NMOD:PART",
+            "NSUBJ:COP", "OBL:AGENT", "OBL:TMOD"};
     public static final UniversalDependencyType[] universalDependencyTags = {UniversalDependencyType.ACL, UniversalDependencyType.ADVCL,
             UniversalDependencyType.ADVMOD, UniversalDependencyType.AMOD, UniversalDependencyType.APPOS, UniversalDependencyType.AUX, UniversalDependencyType.CASE,
             UniversalDependencyType.CC, UniversalDependencyType.CCOMP, UniversalDependencyType.CLF, UniversalDependencyType.COMPOUND, UniversalDependencyType.CONJ,
@@ -18,7 +28,12 @@ public class UniversalDependencyRelation extends DependencyRelation {
             UniversalDependencyType.GOESWITH, UniversalDependencyType.IOBJ, UniversalDependencyType.LIST, UniversalDependencyType.MARK, UniversalDependencyType.NMOD,
             UniversalDependencyType.NSUBJ, UniversalDependencyType.NUMMOD, UniversalDependencyType.OBJ, UniversalDependencyType.OBL, UniversalDependencyType.ORPHAN,
             UniversalDependencyType.PARATAXIS, UniversalDependencyType.PUNCT, UniversalDependencyType.REPARANDUM, UniversalDependencyType.ROOT,
-            UniversalDependencyType.VOCATIVE, UniversalDependencyType.XCOMP};
+            UniversalDependencyType.VOCATIVE, UniversalDependencyType.XCOMP, UniversalDependencyType.ACL_RELCL, UniversalDependencyType.AUX_PASS,
+            UniversalDependencyType.CC_PRECONJ, UniversalDependencyType.COMPOUND_PRT, UniversalDependencyType.DET_PREDET, UniversalDependencyType.FLAT_FOREIGN,
+            UniversalDependencyType.NSUBJ_PASS, UniversalDependencyType.CSUBJ_PASS, UniversalDependencyType.NMOD_NPMOD, UniversalDependencyType.NMOD_POSS,
+            UniversalDependencyType.NMOD_TMOD, UniversalDependencyType.ADVMOD_EMPH, UniversalDependencyType.AUX_Q, UniversalDependencyType.COMPOUND_LVC,
+            UniversalDependencyType.COMPOUND_REDUP, UniversalDependencyType.CSUBJ_COP, UniversalDependencyType.NMOD_COMP, UniversalDependencyType.NMOD_PART,
+            UniversalDependencyType.NSUBJ_COP, UniversalDependencyType.OBL_AGENT, UniversalDependencyType.OBL_TMOD};
     public static final String[] universalDependencyPosTypes = {"ADJ", "ADV", "INTJ", "NOUN", "PROPN", "VERB", "ADP", "AUX", "CCONJ",
             "DET", "NUM", "PART", "PRON", "SCONJ", "PUNCT", "SYM", "X"};
     public static final UniversalDependencyPosType[] universalDependencyPosTags = {UniversalDependencyPosType.ADJ, UniversalDependencyPosType.ADV, UniversalDependencyPosType.INTJ, UniversalDependencyPosType.NOUN, UniversalDependencyPosType.PROPN,

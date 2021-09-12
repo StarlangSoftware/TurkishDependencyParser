@@ -49,4 +49,25 @@ public class UniversalDependencyTreeBankCorpusTest {
         assertEquals(16882, wordCount(corpus));
     }
 
+    @Test
+    public void testDependencyCorpus6() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_boun-ud-dev.conllu");
+        assertEquals(979, corpus.sentenceCount());
+        assertEquals(12074, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus7() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_boun-ud-test.conllu");
+        assertEquals(979, corpus.sentenceCount());
+        assertEquals(12095, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus8() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_boun-ud-train.conllu");
+        assertEquals(7803, corpus.sentenceCount());
+        assertEquals(98214, wordCount(corpus));
+    }
+
 }
