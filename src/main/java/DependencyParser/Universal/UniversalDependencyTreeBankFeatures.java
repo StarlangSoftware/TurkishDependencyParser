@@ -26,6 +26,10 @@ public class UniversalDependencyTreeBankFeatures {
         return featureList.get(feature);
     }
 
+    public boolean featureExists(String feature){
+        return featureList.containsKey(feature);
+    }
+
     public String toString(){
         if (featureList.isEmpty()){
             return "_";

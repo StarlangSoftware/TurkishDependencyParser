@@ -51,6 +51,10 @@ public class UniversalDependencyTreeBankWord extends Word {
         return features.getFeatureValue(featureName);
     }
 
+    public boolean featureExists(String featureName) {
+        return features.featureExists(featureName);
+    }
+
     public UniversalDependencyRelation getRelation() {
         return relation;
     }
