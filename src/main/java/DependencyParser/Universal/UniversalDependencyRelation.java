@@ -1,6 +1,7 @@
 package DependencyParser.Universal;
 
 import DependencyParser.DependencyRelation;
+import DependencyParser.ParserEvaluationScore;
 
 public class UniversalDependencyRelation extends DependencyRelation {
 
@@ -85,6 +86,20 @@ public class UniversalDependencyRelation extends DependencyRelation {
         if (this.universalDependencyType == null){
             System.out.println("Dependency Tag " + dependencyType + " does not exist\n");
         }
+    }
+
+    public ParserEvaluationScore compareRelations(UniversalDependencyRelation relation){
+        double LS = 0.0, LAS = 0.0, UAS = 0.0;
+        if (toString().equals(relation.toString())){
+            LS = 1.0;
+            if (toWord == relation.to()){
+                LAS = 1.0;
+            }
+        }
+        if (toWord == relation.to()){
+            UAS = 1.0;
+        }
+        return new ParserEvaluationScore(LAS, UAS, LS, 1);
     }
 
     public String toString(){

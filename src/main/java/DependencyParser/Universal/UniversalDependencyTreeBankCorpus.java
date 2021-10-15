@@ -1,6 +1,7 @@
 package DependencyParser.Universal;
 
 import Corpus.Corpus;
+import DependencyParser.ParserEvaluationScore;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -66,5 +67,13 @@ public class UniversalDependencyTreeBankCorpus extends Corpus{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public ParserEvaluationScore compareParses(UniversalDependencyTreeBankCorpus corpus){
+        ParserEvaluationScore score = new ParserEvaluationScore();
+        for (int i = 0; i < sentences.size(); i++){
+            score.add(((UniversalDependencyTreeBankSentence) sentences.get(i)).compareParses((UniversalDependencyTreeBankSentence) corpus.getSentence(i)));
+        }
+        return score;
     }
 }
