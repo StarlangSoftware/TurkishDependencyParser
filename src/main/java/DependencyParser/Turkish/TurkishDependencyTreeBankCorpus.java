@@ -2,15 +2,9 @@ package DependencyParser.Turkish;
 
 import Corpus.Corpus;
 import DataStructure.CounterHashMap;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import Xml.XmlDocument;
+import Xml.XmlElement;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class TurkishDependencyTreeBankCorpus extends Corpus{
@@ -38,31 +32,16 @@ public class TurkishDependencyTreeBankCorpus extends Corpus{
      */
     public TurkishDependencyTreeBankCorpus(String fileName){
         super();
-        Node rootNode, sentenceNode;
+        XmlElement rootNode, sentenceNode;
         TurkishDependencyTreeBankSentence sentence;
-        DocumentBuilder builder = null;
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        try {
-            builder = factory.newDocumentBuilder();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        }
-        Document doc = null;
-        try {
-            ClassLoader classLoader = getClass().getClassLoader();
-            doc = builder.parse(new InputSource(classLoader.getResourceAsStream(fileName)));
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        ClassLoader classLoader = getClass().getClassLoader();
+        XmlDocument doc = new XmlDocument(classLoader.getResourceAsStream(fileName));
+        doc.parse();
         rootNode = doc.getFirstChild();
         sentenceNode = rootNode.getFirstChild();
         while (sentenceNode != null){
-            if (sentenceNode.getNodeValue() == null){
-                sentence = new TurkishDependencyTreeBankSentence(sentenceNode);
-                sentences.add(sentence);
-            }
+            sentence = new TurkishDependencyTreeBankSentence(sentenceNode);
+            sentences.add(sentence);
             sentenceNode = sentenceNode.getNextSibling();
         }
     }

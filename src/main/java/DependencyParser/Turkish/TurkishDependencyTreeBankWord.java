@@ -2,8 +2,7 @@ package DependencyParser.Turkish;
 
 import Dictionary.Word;
 import MorphologicalAnalysis.MorphologicalParse;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import Xml.XmlElement;
 
 import java.util.ArrayList;
 
@@ -18,27 +17,25 @@ public class TurkishDependencyTreeBankWord extends Word{
      * dependencies, the method constructs a {@link TurkishDependencyTreeBankWord} from it.
      * @param wordNode Xml parsed node containing information about a word.
      */
-    public TurkishDependencyTreeBankWord(Node wordNode){
+    public TurkishDependencyTreeBankWord(XmlElement wordNode){
         super();
-        NamedNodeMap attributes;
         String IG, relationName, dependencyType;
         int i, index, toWord = 0, toIG = 0;
         originalParses = new ArrayList<MorphologicalParse>();
         if (wordNode.hasAttributes()){
-            if (wordNode.getFirstChild().getNodeValue() != null){
-                name = wordNode.getFirstChild().getNodeValue();
+            if (!wordNode.getPcData().isEmpty()){
+                name = wordNode.getPcData();
             } else {
                 System.out.println("Word data does not exist\n");
             }
-            attributes = wordNode.getAttributes();
-            if (attributes.getNamedItem("IG") != null){
-                IG = attributes.getNamedItem("IG").getNodeValue();
+            if (!wordNode.getAttributeValue("IG").isEmpty()){
+                IG = wordNode.getAttributeValue("IG");
                 parse = new MorphologicalParse(splitIntoInflectionalGroups(IG));
             } else {
-                System.out.println("No IG defined for the word " + wordNode.getFirstChild().getNodeValue() + "\n");
+                System.out.println("No IG defined for the word " + wordNode.getPcData() + "\n");
             }
-            if (attributes.getNamedItem("REL") != null){
-                relationName = attributes.getNamedItem("REL").getNodeValue();
+            if (!wordNode.getAttributeValue("REL").isEmpty()){
+                relationName = wordNode.getAttributeValue("REL");
                 if (!relationName.equals("[,( )]")){
                     String[] relationParts = relationName.split("[\\[\\(\\)\\],]");
                     index = 0;
@@ -58,11 +55,11 @@ public class TurkishDependencyTreeBankWord extends Word{
                     }
                 }
             } else {
-                System.out.println("No REL defined for the word " + wordNode.getFirstChild().getNodeValue() + "\n");
+                System.out.println("No REL defined for the word " + wordNode.getPcData() + "\n");
             }
             for (i = 1; i <= 9; i++){
-                if (attributes.getNamedItem("ORG_IG" + i) != null){
-                    IG = attributes.getNamedItem("ORG_IG" + i).getNodeValue();
+                if (!wordNode.getAttributeValue("ORG_IG" + i).isEmpty()){
+                    IG = wordNode.getAttributeValue("ORG_IG" + i);
                     originalParses.add(new MorphologicalParse(splitIntoInflectionalGroups(IG)));
                 } else {
                     break;

@@ -1,7 +1,7 @@
 package DependencyParser.Turkish;
 
 import Corpus.Sentence;
-import org.w3c.dom.Node;
+import Xml.XmlElement;
 
 public class TurkishDependencyTreeBankSentence extends Sentence{
 
@@ -10,9 +10,9 @@ public class TurkishDependencyTreeBankSentence extends Sentence{
      * {@link TurkishDependencyTreeBankSentence} from it.
      * @param sentenceNode Xml parsed node containing information about a sentence.
      */
-    public TurkishDependencyTreeBankSentence(Node sentenceNode){
+    public TurkishDependencyTreeBankSentence(XmlElement sentenceNode){
         super();
-        Node wordNode;
+        XmlElement wordNode;
         TurkishDependencyTreeBankWord word;
         wordNode = sentenceNode.getFirstChild();
         while (wordNode != null){
