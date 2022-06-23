@@ -12,7 +12,7 @@ The developments in the dependency treebanking made it clear that Turkish langua
 Video Lectures
 ============
 
-[<img src=video1.jpg width="50%">](https://youtu.be/zi4BYtZV9JE)
+[<img src=video1.jpg width="50%">](https://youtu.be/zi4BYtZV9JE)[<img src=video2.jpg width="50%">](https://youtu.be/vS5o49V0wrU)
 
 For Developers
 ============
