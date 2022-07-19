@@ -14,6 +14,11 @@ Video Lectures
 
 [<img src=video1.jpg width="50%">](https://youtu.be/zi4BYtZV9JE)[<img src=video2.jpg width="50%">](https://youtu.be/vS5o49V0wrU)
 
+Class Diagram
+============
+
+<img src="classDiagram.png">
+
 For Developers
 ============
 You can also see either [Python](https://github.com/starlangsoftware/TurkishDependencyParser-Py), [Cython](https://github.com/starlangsoftware/TurkishDependencyParser-Cy), [C++](https://github.com/starlangsoftware/TurkishDependencyParser-CPP), [Swift](https://github.com/starlangsoftware/TurkishDependencyParser-Swift), [Js](https://github.com/starlangsoftware/TurkishDependencyParser-Js), or [C#](https://github.com/starlangsoftware/TurkishDependencyParser-CS) repository.
