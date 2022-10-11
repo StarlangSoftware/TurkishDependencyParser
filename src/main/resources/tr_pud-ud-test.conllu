@@ -123,7 +123,7 @@
 
 # sent_id = n01002042
 # text = Yeni bütçe Clinton'un kabarık banka hesabından sağlanıyor.
-# text_en = The new spending is fueled by Clinton’s large bank account.
+# text_en = The new spending is fueled by Clinton's large bank account.
 1	Yeni	yeni	ADJ	JJ	Number=Sing	2	amod	_	_
 2	bütçe	bütçe	NOUN	NN	Case=Nom|Number=Sing	7	nsubj	_	_
 3	Clinton'un	Clinton	PROPN	PROPN	Case=Gen|Number=Sing	6	nmod:poss	_	Proper=True
@@ -135,7 +135,7 @@
 
 # sent_id = n01002058
 # text = Söylediği ve yaptığı şeyler gerçekten inanılmaz.
-# text_en = What she’s saying and what she’s doing, it — actually, it’s unbelievable.
+# text_en = What she's saying and what she's doing, it — actually, it's unbelievable.
 1	Söylediği	söyle	ADJ	VJ	Number=Sing|Number[psor]=Sing|Person[psor]=3|Polarity=Pos	4	acl	_	_
 2	ve	ve	CCONJ	CCONJ	_	3	cc	_	_
 3	yaptığı	yap	ADJ	VJ	Number=Sing|Number[psor]=Sing|Person[psor]=3|Polarity=Pos	1	conj	_	_
@@ -194,7 +194,7 @@
 
 # sent_id = n01003012
 # text = Buluşma yeri esasen Washington, H Street üzerindeki Metropolitan Club olarak belirlenmişti.
-# text_en = The gathering was originally slated for Washington’s private Metropolitan Club on H Street a few blocks away.
+# text_en = The gathering was originally slated for Washington's private Metropolitan Club on H Street a few blocks away.
 1	Buluşma	buluş	NOUN	VN	Aspect=Perf|Case=Nom|Mood=Ind|Tense=Pres|VerbForm=Ger	2	nmod:poss	_	_
 2	yeri	yer	NOUN	NN	Case=Nom|Number=Sing|Number[psor]=Sing|Person[psor]=3	13	nsubj	_	_
 3	esasen	esas	ADV	RB	_	13	advmod	_	_
@@ -414,7 +414,7 @@
 # newdoc id = n01009
 # sent_id = n01009027
 # text = Khanzir artık günümüzde tek başına kalmış olabilir fakat o eskiden yalnız bir domuz değildi.
-# text_en = Today, Khanzir may be a lonely pig, but he isn’t always alone.
+# text_en = Today, Khanzir may be a lonely pig, but he isn't always alone.
 1	Khanzir	Khanzir	PROPN	PROPN	Case=Nom|Number=Sing	7	nsubj	_	Proper=True
 2	artık	artık	ADV	RB	_	7	advmod	_	_
 3	günümüzde	gün	NOUN	NN	Case=Loc|Number=Sing|Number[psor]=Plur|Person[psor]=1	7	obl	_	_
@@ -433,7 +433,7 @@
 
 # sent_id = n01009054
 # text = Saqib "Bir adet domuz da dahil olmak üzere, diğer ülkelerden hayvanat bahçesindeki çeşitliliği artırmak için yardım istedik" dedi.
-# text_en = “We’ve requested other nations to help us populate the zoo with different species of animals, including a pig,” Saqib said.
+# text_en = “We've requested other nations to help us populate the zoo with different species of animals, including a pig,” Saqib said.
 1	Saqib	Saqib	PROPN	PROPN	Case=Nom|Number=Sing	22	nsubj	_	Proper=True
 2	"	"	PUNCT	``	_	20	punct	_	SpaceAfter=No
 3	Bir	bir	NUM	CD	Definite=Ind|Number=Sing|Polarity=Pos	4	nummod	_	_
@@ -3370,7 +3370,7 @@
 
 # sent_id = n01059025
 # text = "Washington ve Lincoln dönemlerindeki gayrisafi yurt içi hasıla büyümesi nasıldı, bilmiyorum, ancak o dönemlerdeki kurumsal gelişmeler büyük kapsamlı ve uzun süreli etkilere sahip olmuştu."
-# text_en = “I don’t know what G.D.P. growth was during the Washington and Lincoln Administrations, but the institutional developments in those terms had large and long-lasting effects.”
+# text_en = “I don't know what G.D.P. growth was during the Washington and Lincoln Administrations, but the institutional developments in those terms had large and long-lasting effects.”
 1	"	"	PUNCT	``	_	15	punct	_	SpaceAfter=No
 2	Washington	Washington	PROPN	PROPN	Number=Sing	5	nmod:poss	_	Proper=True
 3	ve	ve	CCONJ	CCONJ	_	4	cc	_	_
@@ -3409,7 +3409,7 @@
 
 # sent_id = n01059054
 # text = Sulla ile Trump, Roma ve ABD arasında benzerlikten çok farklılık var, ancak bu mevcut benzerliklerin görmezden gelinmesi için bir sebep değil.
-# text_en = There are more differences between Sulla and Trump, Rome and the U.S., than there are similarities, but that doesn’t discredit the resemblances.
+# text_en = There are more differences between Sulla and Trump, Rome and the U.S., than there are similarities, but that doesn't discredit the resemblances.
 1	Sulla	Sulla	PROPN	PROPN	Number=Sing	8	nmod:poss	_	Proper=True
 2	ile	ile	CCONJ	CCONJ	_	3	cc	_	_
 3	Trump	Trump	PROPN	PROPN	Number=Sing	1	conj	_	Proper=True|SpaceAfter=No
@@ -3495,7 +3495,7 @@
 
 # sent_id = n01061023
 # text = Donald Trump taklitçisi John Di Domenico geçen sene Slate'e yaptığı açıklamada "Onu oynarken güçlü hissediyorum." demişti.
-# text_en = “When I’m playing him, I feel powerful,” the Donald Trump impersonator John Di Domenico explained to Slate last year.
+# text_en = “When I'm playing him, I feel powerful,” the Donald Trump impersonator John Di Domenico explained to Slate last year.
 1	Donald	Donald	PROPN	PROPN	Number=Sing	3	nmod:poss	_	Proper=True
 2	Trump	Trump	PROPN	PROPN	Number=Sing	1	flat	_	Proper=True
 3	taklitçisi	taklitçi	NOUN	NN	Number=Sing	19	nsubj	_	_
@@ -3541,7 +3541,7 @@
 # newdoc id = n01062
 # sent_id = n01062035
 # text = Bunlar genellikle bir sürü şey yapmak isteyen sanatçılar.
-# text_en = They’re usually artists who want to do a bunch of stuff.
+# text_en = They're usually artists who want to do a bunch of stuff.
 1	Bunlar	bu	PRON	PRP	Case=Nom|Number=Plur|Polarity=Pos	8	nsubj	_	_
 2	genellikle	genellikle	ADV	RB	_	8	advmod	_	_
 3	bir	bir	DET	DT	Definite=Ind|Number=Sing|Polarity=Pos	4	det	_	_
@@ -3681,7 +3681,7 @@
 
 # sent_id = n01064096
 # text = Tanıdığım birçok insan gibi ben de son ayları sabahlara kadar dehşet içerisinde anketleri okuyarak geçirdim.
-# text_en = Like many people I know, I’ve spent recent months staying up late, reading polls in terror.
+# text_en = Like many people I know, I've spent recent months staying up late, reading polls in terror.
 1	Tanıdığım	tanı	ADJ	VJ	Number=Sing|Number[psor]=Sing|Person[psor]=1|Polarity=Pos	3	acl	_	_
 2	birçok	birçok	DET	DT	Definite=Ind|Number=Sing|Polarity=Pos	3	det	_	_
 3	insan	insan	NOUN	NN	Number=Sing	5	amod	_	_
@@ -3751,7 +3751,7 @@
 # newdoc id = n01066
 # sent_id = n01066045
 # text = Vakıf, 2010 yılında, "Zettel's Traum'un" dizgi basımını yayımladı ve fotoğrafların taslak gibi göründüğü hissine kapılanlar bu engeli kaldırdı.
-# text_en = In 2010, the foundation released a typeset edition of “Zettel’s Traum,” removing the bar to entry for those who balked at the draft-like feel of the photo-offset.
+# text_en = In 2010, the foundation released a typeset edition of “Zettel's Traum,” removing the bar to entry for those who balked at the draft-like feel of the photo-offset.
 1	Vakıf	vakıf	NOUN	NN	Case=Nom|Number=Sing	12	nsubj	_	SpaceAfter=No
 2	,	,	PUNCT	,	_	1	punct	_	_
 3	2010	2010	NUM	CD	Number=Sing|NumType=Ord	4	nmod:poss	_	_
@@ -4096,7 +4096,7 @@
 
 # sent_id = n01073023
 # text = Dünyanın en iyisi olmaya ilişkin kutsal hakları artık garanti değil miydi?
-# text_en = Was their divine right to the mantle as the world’s best no longer warranted?
+# text_en = Was their divine right to the mantle as the world's best no longer warranted?
 1	Dünyanın	dünya	NOUN	NN	Case=Gen|Number=Sing	3	nmod:poss	_	_
 2	en	en	ADV	RB	_	3	advmod	_	_
 3	iyisi	iyi	NOUN	NN	Number=Sing	7	acl	_	_
@@ -4285,7 +4285,7 @@
 
 # sent_id = n01076030
 # text = İşkenceyi destekler nitelikte konuştu.
-# text_en = He’s spoken in favour of torture.
+# text_en = He's spoken in favour of torture.
 1	İşkenceyi	İşkence	NOUN	NN	Case=Acc|Number=Sing	2	obj	_	_
 2	destekler	destek	ADJ	VJ	Number=Plur	3	compound	_	_
 3	nitelikte	nitelikte	NOUN	NN	Case=Loc|Number=Sing	4	obl	_	_
@@ -4342,7 +4342,7 @@
 # newdoc id = n01079
 # sent_id = n01079015
 # text = Köşede başörtülü ve kot pantolonlu bir kız var ve o kadar mütevazi görünüyor ki onun da bir asistan olduğunu düşünüyorum.
-# text_en = In the corner is a girl in a headscarf and jeans who looks so unassuming I think it’s another assistant.
+# text_en = In the corner is a girl in a headscarf and jeans who looks so unassuming I think it's another assistant.
 1	Köşede	köşe	NOUN	NN	Case=Loc|Number=Sing	8	obl	_	_
 2	başörtülü	_	ADJ	JJ	Number=Sing	7	amod	_	_
 3	ve	ve	CCONJ	CCONJ	_	5	cc	_	_
@@ -4367,7 +4367,7 @@
 
 # sent_id = n01079065
 # text = Sanatçılar insanların kalplerine ulaşır; bir yerde buluşup farklılıklarımızı bir kenara koyabildiğimiz tek zaman bu.
-# text_en = Artists reach people at their heart; it’s the only time we meet in one place and put our differences aside.
+# text_en = Artists reach people at their heart; it's the only time we meet in one place and put our differences aside.
 1	Sanatçılar	Sanatçı	NOUN	NN	Case=Nom|Number=Plur	4	nsubj	_	_
 2	insanların	insan	NOUN	NN	Case=Gen|Number=Plur	3	nmod:poss	_	_
 3	kalplerine	kalp	NOUN	NN	Case=Dat|Number=Plur|Number[psor]=Sing|Person[psor]=3	4	obl	_	_
@@ -4425,7 +4425,7 @@
 
 # sent_id = n01080042
 # text = Ben de onlarla izlemek istedim, ama sonunda bensiz izlemek istediklerine karar verdiler.
-# text_en = I wanted to watch it with them, but they decided they’d rather watch it without me in the end.
+# text_en = I wanted to watch it with them, but they decided they'd rather watch it without me in the end.
 1	Ben	ben	PRON	PRP	Case=Nom|Number=Sing|Person=1|Polarity=Pos	5	nsubj	_	_
 2	de	de	ADV	RB	_	1	advmod:emph	_	_
 3	onlarla	on	PRON	PRP	Case=Ins|Number=Plur|Polarity=Pos	4	obl	_	_
@@ -4444,7 +4444,7 @@
 # newdoc id = n01081
 # sent_id = n01081022
 # text = Başkanlığın, bu kadar ırkçı, cinsiyetçi ve başkumandan olmak için akıl almaz derecede niteliksiz biri olan Donald Trump'a kalmasına izin veremeyiz.
-# text_en = We can’t let the presidency go to Donald Trump, someone so racist, sexist and incredibly unqualified to be commander-in-chief.
+# text_en = We can't let the presidency go to Donald Trump, someone so racist, sexist and incredibly unqualified to be commander-in-chief.
 1	Başkanlığın	Başkanlığ	NOUN	NN	Case=Gen|Number=Sing	20	nsubj	_	SpaceAfter=No
 2	,	,	PUNCT	.	_	1	punct	_	_
 3	bu	bu	PRON	PRD	Definite=Def|Number=Sing|Polarity=Pos	5	obl	_	ToDo=nmod
@@ -4757,7 +4757,7 @@
 
 # sent_id = n01086031
 # text = Bu tam anlamıyla korkunç.
-# text_en = That’s just legitimately horrendous.
+# text_en = That's just legitimately horrendous.
 1	Bu	bu	PRON	PRD	Case=Nom|Definite=Def|Number=Sing|Polarity=Pos	4	nsubj	_	_
 2	tam	tam	ADJ	JJ	Number=Sing	3	amod	_	_
 3	anlamıyla	anlamıyla	NOUN	NN	Case=Ins|Number=Sing|Number[psor]=Sing|Person[psor]=3	4	obl	_	_
@@ -4767,7 +4767,7 @@
 # newdoc id = n01087
 # sent_id = n01087005
 # text = Rocco Catalano'nun retro bir şekilde çalıştığı, yaşadığı ve nefes aldığını söylemek yanlış olmaz.
-# text_en = It’s fair to say that Rocco Catalano works, lives and breathes retro.
+# text_en = It's fair to say that Rocco Catalano works, lives and breathes retro.
 1	Rocco	Rocco	PROPN	PROPN	Number=Sing	6	nsubj	_	Proper=True
 2	Catalano'nun	Catalano	PROPN	PROPN	Case=Gen|Number=Sing	1	flat	_	Proper=True
 3	retro	retro	ADJ	JJ	Number=Sing	5	amod	_	_
@@ -4786,7 +4786,7 @@
 
 # sent_id = n01087018
 # text = Sanırım bu yüzden kendilerini desen ve renge bulamışlar.
-# text_en = I think that’s why they immersed themselves in pattern and colour.
+# text_en = I think that's why they immersed themselves in pattern and colour.
 1	Sanırım	san	VERB	VB	Aspect=Hab|Mood=Gen|Number=Sing|Person=1|Tense=Pres	8	advcl	_	_
 2	bu	bu	DET	DT	Definite=Def|Number=Sing|Polarity=Pos	3	det	_	_
 3	yüzden	yüz	NOUN	NN	Case=Abl|Number=Sing	8	obl	_	_
@@ -4906,7 +4906,7 @@
 # newdoc id = n01090
 # sent_id = n01090004
 # text = Motosiklet yarışına baktım ve baktıkça, 1970'lerden kalmış gibi görünen fotoğraflardan bir kadının yüzü karşıma çıkmaya devam etti.
-# text_en = I looked at motocross and the more I looked, this one woman’s face kept coming up, in photographs that looked as if they were from the 1970s.
+# text_en = I looked at motocross and the more I looked, this one woman's face kept coming up, in photographs that looked as if they were from the 1970s.
 1	Motosiklet	Motosiklet	NOUN	NN	Number=Sing	2	nmod:poss	_	_
 2	yarışına	yarış	NOUN	NN	Case=Dat|Number=Sing|Number[psor]=Sing|Person[psor]=3	3	obl	_	_
 3	baktım	bak	VERB	VB	Aspect=Perf|Mood=Ind|Number=Sing|Person=1|Tense=Past	0	root	_	_
@@ -4986,7 +4986,7 @@
 
 # sent_id = n01091017
 # text = Doğa politikaları başkanı Jeff Knott, "Arkasından bir yasak veya avlanma ruhsatı gelirse çok şaşırırım." dedi.
-# text_en = Their head of nature policy, Jeff Knott, stated: “I’d be amazed if either a ban or licensing was introduced off the back of it”.
+# text_en = Their head of nature policy, Jeff Knott, stated: “I'd be amazed if either a ban or licensing was introduced off the back of it”.
 1	Doğa	doğa	NOUN	NN	Number=Sing	2	nmod:poss	_	_
 2	politikaları	politika	NOUN	NN	Number=Plur|Number[psor]=Sing|Person[psor]=3	3	nmod:poss	_	_
 3	başkanı	başkan	NOUN	NN	Number=Sing|Number[psor]=Sing|Person[psor]=3	19	nsubj	_	_
@@ -5010,7 +5010,7 @@
 
 # sent_id = n01091019
 # text = RSPB'nin tutumu, dilekçenin yazarı Mark Avery'den televizyon programı sunucusu Chris Packham'a kadar pek çok önde gelen çevreciyle çatışmasına neden oldu.
-# text_en = The RSPB’s stance has also brought it into conflict with many leading conservationists, from the author of the petition, Mark Avery, to the TV presenter Chris Packham.
+# text_en = The RSPB's stance has also brought it into conflict with many leading conservationists, from the author of the petition, Mark Avery, to the TV presenter Chris Packham.
 1	RSPB'nin	RSPB	PROPN	PROPN	Case=Gen|Number=Sing	2	nmod:poss	_	Proper=True
 2	tutumu	tut	NOUN	NN	Case=Nom|Number=Sing|Number[psor]=Sing|Person[psor]=3	20	nsubj	_	SpaceAfter=No
 3	,	,	PUNCT	,	_	2	punct	_	_
@@ -5037,7 +5037,7 @@
 # newdoc id = n01092
 # sent_id = n01092008
 # text = Haksız olduğunu farz edelim.
-# text_en = Let’s just say he’s wrong.
+# text_en = Let's just say he's wrong.
 1	Haksız	haksız	ADJ	JJ	Number=Sing	3	ccomp	_	_
 2	olduğunu	ol	AUX	VN	Case=Acc|Number=Sing|Number[psor]=Sing|Person[psor]=3|Polarity=Pos	1	cop	_	_
 3	farz	farz	NOUN	NN	Number=Sing	0	root	_	_
@@ -5046,7 +5046,7 @@
 
 # sent_id = n01092014
 # text = Peki ya Avustralya'nın bu konudaki duruşu?
-# text_en = And what about Australia’s position?
+# text_en = And what about Australia's position?
 1	Peki	peki	ADV	RB	_	7	cc	_	_
 2	ya	ya	ADV	RB	_	7	discourse	_	_
 3	Avustralya'nın	Avustralya	PROPN	PROPN	Case=Gen|Number=Sing	7	nmod:poss	_	Proper=True
@@ -5156,7 +5156,7 @@
 
 # sent_id = n01093025
 # text = Çevreciler komisyonun açıklamasını sevinçle karşıladı.
-# text_en = Conservationists welcomed the commission’s announcement.
+# text_en = Conservationists welcomed the commission's announcement.
 1	Çevreciler	Çevreci	NOUN	NN	Case=Nom|Number=Plur	5	nsubj	_	_
 2	komisyonun	komisyon	NOUN	NN	Case=Gen|Number=Sing	3	nmod:poss	_	_
 3	açıklamasını	açıkla	NOUN	VN	Aspect=Perf|Case=Acc|Mood=Ind|Number[psor]=Sing|Person[psor]=3|Tense=Pres|VerbForm=Ger	5	obj	_	_
@@ -5208,7 +5208,7 @@
 # newdoc id = n01095
 # sent_id = n01095004
 # text = Bizim zamanımızda bunlar yoktu ve çocuk sahibi olmayan insanlar, modern ebeveynlikle ilgili tüm nefretlerini onaylamayarak ifade ediyor.
-# text_en = They didn’t have them in our day, and people without children express through their disapproval all their hatred of modern parenting.
+# text_en = They didn't have them in our day, and people without children express through their disapproval all their hatred of modern parenting.
 1	Bizim	biz	PRON	PRP$	Case=Gen|Number=Sing|Person=1|Polarity=Pos	2	nmod:poss	_	_
 2	zamanımızda	zaman	NOUN	NN	Case=Loc|Number=Sing|Number[psor]=Plur|Person[psor]=1	4	obl	_	_
 3	bunlar	bu	PRON	PRD	Case=Nom|Number=Plur|Polarity=Pos	4	nsubj	_	_
@@ -5233,7 +5233,7 @@
 
 # sent_id = n01095009
 # text = Buna boş yere canavar demiyorum.
-# text_en = I don’t call it a beast lightly.
+# text_en = I don't call it a beast lightly.
 1	Buna	bu	PRON	PRD	Case=Dat|Number=Sing|Polarity=Pos	5	iobj	_	_
 2	boş	boş	ADJ	JJ	Number=Sing	3	amod	_	_
 3	yere	yer	NOUN	NN	Case=Dat|Number=Sing	5	obl	_	_
@@ -5510,7 +5510,7 @@
 
 # sent_id = n01101007
 # text = Yemin, meclis üyelerinin Çin Halk Cumhuriyeti'nin bir parçası olarak Hong Kong'a bağlılık sözünü içeriyor.
-# text_en = The oath involves lawmakers swearing allegiance to Hong Kong as part of the People’s Republic of China.
+# text_en = The oath involves lawmakers swearing allegiance to Hong Kong as part of the People's Republic of China.
 1	Yemin	yemin	NOUN	NN	Case=Nom|Number=Sing	15	nsubj	_	SpaceAfter=No
 2	,	,	PUNCT	,	_	1	punct	_	_
 3	meclis	meclis	NOUN	NN	Number=Sing	4	nmod:poss	_	_
@@ -5586,7 +5586,7 @@
 # newdoc id = n01102
 # sent_id = n01102006
 # text = BBC'nin Andrew Marr Show programında şunları söyledi: "Açıkçası bir genel seçim hükumetin istediği en son şey."
-# text_en = He told the BBC’s Andrew Marr Show: “A general election is frankly the last thing that the Government wants.”
+# text_en = He told the BBC's Andrew Marr Show: “A general election is frankly the last thing that the Government wants.”
 1	BBC'nin	BBC	PROPN	PROPN	Case=Gen|Number=Sing	5	nmod:poss	_	Proper=True
 2	Andrew	Andrew	PROPN	PROPN	Number=Sing	5	nmod:poss	_	Proper=True
 3	Marr	Marr	PROPN	PROPN	Number=Sing	2	flat	_	Proper=True
@@ -5762,7 +5762,7 @@
 # newdoc id = n01107
 # sent_id = n01107005
 # text = Şirketin yıllarca süren aldatmacasının haberi VW'nin değerinden on milyarlarca avroyu buharlaştırdı ve yönetim kurulu başkanı Martin Winterkorn'u işinden etti.
-# text_en = News of the company’s deceit - which had run for years - wiped tens of billions of euros from VW's value and cost chief executive Martin Winterkorn his job.
+# text_en = News of the company's deceit - which had run for years - wiped tens of billions of euros from VW's value and cost chief executive Martin Winterkorn his job.
 1	Şirketin	şirket	NOUN	NN	Case=Gen|Number=Sing	4	nmod:poss	_	_
 2	yıllarca	yıl	ADV	RB	_	3	advmod	_	_
 3	süren	sür	ADJ	VJ	Number=Sing|Polarity=Pos	4	acl	_	_
@@ -5940,7 +5940,7 @@
 
 # sent_id = n01109012
 # text = Eon'un sabit fiyat tarifesi 760 sterlindir, Avro Energy müşterileri ise Temel ve Seçmeli tarife için yaklaşık 760 Sterlin ödeyecektir.
-# text_en = Eon’s fixed rate tariff costs £760 and Avro Energy customers would pay around £760 for its Simple and Select tariff.
+# text_en = Eon's fixed rate tariff costs £760 and Avro Energy customers would pay around £760 for its Simple and Select tariff.
 1	Eon'un	Eon	PROPN	PROPN	Case=Gen|Number=Sing	4	nmod:poss	_	Proper=True
 2	sabit	sapit	ADJ	JJ	Number=Sing	3	amod	_	_
 3	fiyat	fiyat	NOUN	NN	Number=Sing	4	nmod:poss	_	_
@@ -6249,7 +6249,7 @@
 
 # sent_id = n01115013
 # text = Geçtiğimiz yıl inanılmaz bir yıl oldu ve 2017'de daha da iyi bir şekilde geri dönmek için sabırsızlanıyorum.
-# text_en = Last year was an incredible year and I’m ready for us to come back even better in 2017.
+# text_en = Last year was an incredible year and I'm ready for us to come back even better in 2017.
 1	Geçtiğimiz	Geçtiği	ADJ	VJ	Number=Sing|Number[psor]=Plur|Person[psor]=1|Polarity=Pos	2	acl	_	_
 2	yıl	yıl	NOUN	NN	Case=Nom|Number=Sing	5	nsubj	_	_
 3	inanılmaz	inan	ADJ	VJ	Aspect=Hab|Mood=Gen|Number=Sing|Person=3|Polarity=Neg|Tense=Pres|Voice=Pass	5	acl	_	_
@@ -6373,7 +6373,7 @@
 
 # sent_id = n01117014
 # text = Teoride, eğer doğru yapılırsa, anlaşılamaz olmalı.
-# text_en = In theory, if done right, it’s un-detectable.
+# text_en = In theory, if done right, it's un-detectable.
 1	Teoride	Teori	NOUN	NN	Case=Loc|Number=Sing	8	obl	_	SpaceAfter=No
 2	,	,	PUNCT	,	_	1	punct	_	_
 3	eğer	eğer	SCONJ	SCONJ	_	5	mark	_	_
@@ -6509,7 +6509,7 @@
 # newdoc id = n01120
 # sent_id = n01120008
 # text = Birçoğu cephe çatışması konusunda pek fazla tecrübeye sahip olmayan modern izleyiciler için Doss'un yetenekleri hayal edilemez bir evrene ait.
-# text_en = To modern audiences, most of whom will have little experience of frontline conflict, Doss’s feats belong to the realm of the unimaginable.
+# text_en = To modern audiences, most of whom will have little experience of frontline conflict, Doss's feats belong to the realm of the unimaginable.
 1	Birçoğu	Birçoğu	PRON	PRI	Case=Nom|Number=Sing|Polarity=Pos	8	nsubj	_	_
 2	cephe	ceph	NOUN	NN	Number=Sing	3	nmod:poss	_	_
 3	çatışması	çatış	NOUN	VN	Aspect=Perf|Mood=Ind|Number[psor]=Sing|Person[psor]=3|Tense=Pres|VerbForm=Ger	4	nmod:poss	_	_
@@ -6533,7 +6533,7 @@
 
 # sent_id = n01120010
 # text = Doss'un hikayesi, onu daha da ilgi çekici hale getiren olağan dışı bir özelliğe sahip.
-# text_en = Doss’s story also has an unlikely quality to it that makes it all the more appealing.
+# text_en = Doss's story also has an unlikely quality to it that makes it all the more appealing.
 1	Doss'un	Doss	PROPN	PROPN	Case=Gen|Number=Sing	2	nmod:poss	_	Proper=True
 2	hikayesi	hikaye	NOUN	NN	Case=Nom|Number=Sing|Number[psor]=Sing|Person[psor]=3	15	nsubj	_	SpaceAfter=No
 3	,	,	PUNCT	,	_	2	punct	_	_
@@ -6567,7 +6567,7 @@
 # newdoc id = n01121
 # sent_id = n01121032
 # text = Millican öldüğünde, bunun yanar dönerli Odi'yi de son görüşümüz olacağını zannettik.
-# text_en = When Millican died, we assumed that was the last we’d see of glitchy, twitchy Odi too.
+# text_en = When Millican died, we assumed that was the last we'd see of glitchy, twitchy Odi too.
 1	Millican	Millican	PROPN	PROPN	Case=Nom|Number=Sing	2	nsubj	_	Proper=True
 2	öldüğünde	öldüğ	NOUN	VN	Case=Loc|Number=Sing|Number[psor]=Sing|Person[psor]=3|Polarity=Pos	12	advcl	_	SpaceAfter=No
 3	,	,	PUNCT	,	_	2	punct	_	_
@@ -6629,7 +6629,7 @@
 # newdoc id = n01123
 # sent_id = n01123010
 # text = Ancak Cotton'un karanlık işleri, bir tür öldürme içgüdüsü sonucu değil.
-# text_en = But Cotton’s dark deeds did not occur due to some sort of compulsion to kill.
+# text_en = But Cotton's dark deeds did not occur due to some sort of compulsion to kill.
 1	Ancak	ancak	ADV	RB	_	10	advmod	_	_
 2	Cotton'un	Cotton	PROPN	PROPN	Number=Sing	4	nmod:poss	_	Proper=True
 3	karanlık	karanlık	NOUN	NN	Number=Sing	4	amod	_	_
@@ -6661,7 +6661,7 @@
 
 # sent_id = n01123024
 # text = Belki de uzun süre uğraşmayacağım için önemi olmaz.
-# text_en = Perhaps it won’t matter as I won’t be troubled long.
+# text_en = Perhaps it won't matter as I won't be troubled long.
 1	Belki	belki	ADV	RB	_	8	advmod	_	_
 2	de	de	ADV	RB	_	1	advmod:emph	_	_
 3	uzun	uzun	ADJ	JJ	Number=Sing	4	amod	_	_
@@ -6702,7 +6702,7 @@
 
 # sent_id = n01125016
 # text = Londra'nın simgesi South Bank Tower, iç mimar Rachel Winham'ı gösteri salonunu tasarlamakla görevlendirdi.
-# text_en = London’s landmark South Bank Tower commissioned interior designer Rachel Winham to design the show apartment.
+# text_en = London's landmark South Bank Tower commissioned interior designer Rachel Winham to design the show apartment.
 1	Londra'nın	Londra	PROPN	PROPN	Case=Gen|Number=Sing	2	nmod:poss	_	Proper=True
 2	simgesi	simge	NOUN	NN	Number=Sing|Number[psor]=Sing|Person[psor]=3	14	nsubj	_	_
 3	South	South	X	FW	_	2	appos	_	Proper=True

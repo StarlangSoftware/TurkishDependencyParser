@@ -730,11 +730,11 @@
 20	.	.	PUNCT	Punc	_	18	punct	_	SpacesAfter=\n
 
 # sent_id = ess_1595
-# text = Kanal açalım, İstanbul’a iki İstanbul daha inşa edelim...
+# text = Kanal açalım, İstanbul'a iki İstanbul daha inşa edelim...
 1	Kanal	kanal	NOUN	Noun	Case=Nom|Number=Sing|Person=3	2	obj	_	_
 2	açalım	aç	VERB	Verb	Mood=Opt|Number=Plur|Person=1|Polarity=Pos	0	root	_	SpaceAfter=No
 3	,	,	PUNCT	Punc	_	9	punct	_	_
-4	İstanbul’a	İstanbul	PROPN	Prop	Case=Dat|Number=Sing|Person=3	9	nsubj	_	_
+4	İstanbul'a	İstanbul	PROPN	Prop	Case=Dat|Number=Sing|Person=3	9	nsubj	_	_
 5	iki	iki	NUM	ANum	NumType=Card	8	nummod	_	_
 6	İstanbul	İstanbul	PROPN	Prop	Case=Nom|Number=Sing|Person=3	8	nmod	_	_
 7	daha	daha	ADV	Adverb	_	8	advmod	_	_
@@ -5118,11 +5118,11 @@
 18	.	.	PUNCT	Punc	_	17	punct	_	SpacesAfter=\n
 
 # sent_id = ess_580
-# text = Sizce de Haydar Dümen’in artık emekliye ayrılması gerekmiyor mu?
+# text = Sizce de Haydar Dümen'in artık emekliye ayrılması gerekmiyor mu?
 1	Sizce	siz	ADV	Adverb	Case=Equ|Number=Plur|Person=2	8	advmod	_	_
 2	de	de	CCONJ	Conj	_	1	advmod:emph	_	_
 3	Haydar	Haydar	NOUN	Noun	Case=Nom|Number=Sing|Person=3	8	nsubj	_	_
-4	Dümen’in	dümen	NOUN	Noun	Case=Gen|Number=Sing|Person=3	3	flat	_	_
+4	Dümen'in	dümen	NOUN	Noun	Case=Gen|Number=Sing|Person=3	3	flat	_	_
 5	artık	artık	ADV	Adverb	_	8	advmod	_	_
 6	emekliye	emekli	NOUN	Noun	Case=Dat|Number=Sing|Person=3	8	obj	_	_
 7	ayrılması	ayrıl	VERB	Verb	Case=Nom|Number=Sing|Number[psor]=Sing|Person=3|Person[psor]=3|Polarity=Pos	6	compound	_	_
