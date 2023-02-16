@@ -6,7 +6,7 @@
 
     <groupId>io.github.starlangsoftware</groupId>
     <artifactId>DependencyParser</artifactId>
-    <version>1.0.24</version>
+    <version>1.0.25</version>
     <packaging>jar</packaging>
 
     <name>NlpToolkit.DependencyParser</name>
@@ -50,7 +50,7 @@
         <dependency>
             <groupId>io.github.starlangsoftware</groupId>
             <artifactId>MorphologicalAnalysis</artifactId>
-            <version>1.0.58</version>
+            <version>1.0.61</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
