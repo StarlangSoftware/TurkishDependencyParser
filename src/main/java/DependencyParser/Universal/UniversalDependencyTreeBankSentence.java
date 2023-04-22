@@ -14,7 +14,7 @@ public class UniversalDependencyTreeBankSentence extends Sentence {
         comments = new ArrayList<>();
     }
 
-    public UniversalDependencyTreeBankSentence(String sentence){
+    public UniversalDependencyTreeBankSentence(String language, String sentence){
         this();
         UniversalDependencyRelation relation;
         String[] lines = sentence.split("\\n");
@@ -35,7 +35,7 @@ public class UniversalDependencyTreeBankSentence extends Sentence {
                             System.out.println("Line does not contain universal pos ->" + line);
                         }
                         String xpos = items[4];
-                        UniversalDependencyTreeBankFeatures features = new UniversalDependencyTreeBankFeatures(items[5]);
+                        UniversalDependencyTreeBankFeatures features = new UniversalDependencyTreeBankFeatures(language, items[5]);
                         if (!items[6].equals("_")){
                             int to = Integer.parseInt(items[6]);
                             String dependencyType = items[7].toUpperCase();

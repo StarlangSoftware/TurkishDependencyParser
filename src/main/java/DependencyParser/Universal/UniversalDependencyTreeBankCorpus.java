@@ -10,6 +10,8 @@ import java.nio.charset.StandardCharsets;
 
 public class UniversalDependencyTreeBankCorpus extends Corpus{
 
+    private String language;
+
     public UniversalDependencyTreeBankCorpus(){
 
     }
@@ -17,12 +19,13 @@ public class UniversalDependencyTreeBankCorpus extends Corpus{
     public UniversalDependencyTreeBankCorpus(String fileName){
         try {
             ClassLoader classLoader = getClass().getClassLoader();
+            language = fileName.substring(0, fileName.indexOf('_'));
             BufferedReader br = new BufferedReader(new InputStreamReader(classLoader.getResourceAsStream(fileName), StandardCharsets.UTF_8));
             String sentence = "";
             String line = br.readLine();
             while (line != null) {
                 if (line.length() == 0){
-                    addSentence(new UniversalDependencyTreeBankSentence(sentence));
+                    addSentence(new UniversalDependencyTreeBankSentence(language, sentence));
                     sentence = "";
                 } else {
                     sentence += line + "\n";
