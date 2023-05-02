@@ -6,7 +6,7 @@ public class UniversalDependencyTreeBankFeatures {
 
     private HashMap<String, String> featureList;
 
-    public static final String[] universalFeatureTypes =
+    private static final String[] universalFeatureTypes =
             {"PronType", "NumType", "Poss", "Reflex", "Foreign",
             "Abbr", "Typo", "Gender", "Animacy", "NounClass",
             "Number", "Case", "Definite", "Degree", "VerbForm",

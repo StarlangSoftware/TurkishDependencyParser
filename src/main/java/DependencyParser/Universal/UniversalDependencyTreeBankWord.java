@@ -27,6 +27,18 @@ public class UniversalDependencyTreeBankWord extends Word {
         this.misc = misc;
     }
 
+    public UniversalDependencyTreeBankWord(){
+        super("root");
+        this.id = 0;
+        this.lemma = "";
+        this.upos = null;
+        this.xpos = "";
+        this.features = null;
+        this.deps = "";
+        this.misc = "";
+        this.relation = new UniversalDependencyRelation(-1, "");
+    }
+
     public int getId() {
         return id;
     }
