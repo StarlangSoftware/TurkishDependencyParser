@@ -36,7 +36,7 @@ public class UniversalDependencyTreeBankWord extends Word {
         this.features = null;
         this.deps = "";
         this.misc = "";
-        this.relation = new UniversalDependencyRelation(-1, "");
+        this.relation = new UniversalDependencyRelation(-1, "DEP");
     }
 
     public int getId() {
