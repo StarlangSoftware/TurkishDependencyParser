@@ -140,7 +140,7 @@ public class UniversalDependencyTreeBankWord extends Word {
                 e.printStackTrace();
             }
         } else {
-            relation = null;
+            word.relation = null;
         }
         return word;
     }

@@ -196,4 +196,88 @@ public class UniversalDependencyTreeBankCorpusTest {
         assertEquals(71141, wordCount(corpus));
     }
 
+    @Test
+    public void testDependencyCorpus27() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_ewt-ud-dev.conllu");
+        assertEquals(2001, corpus.sentenceCount());
+        assertEquals(25149, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus28() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_ewt-ud-test.conllu");
+        assertEquals(2077, corpus.sentenceCount());
+        assertEquals(25094, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus29() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_ewt-ud-train.conllu");
+        assertEquals(12544, corpus.sentenceCount());
+        assertEquals(204576, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus30() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_gum-ud-dev.conllu");
+        assertEquals(1117, corpus.sentenceCount());
+        assertEquals(19642, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus31() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_gum-ud-test.conllu");
+        assertEquals(1096, corpus.sentenceCount());
+        assertEquals(19905, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus32() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_gum-ud-train.conllu");
+        assertEquals(8548, corpus.sentenceCount());
+        assertEquals(147869, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus33() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_lines-ud-dev.conllu");
+        assertEquals(1032, corpus.sentenceCount());
+        assertEquals(19170, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus34() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_lines-ud-test.conllu");
+        assertEquals(1035, corpus.sentenceCount());
+        assertEquals(17675, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus35() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_lines-ud-train.conllu");
+        assertEquals(3176, corpus.sentenceCount());
+        assertEquals(57372, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus36() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_partut-ud-dev.conllu");
+        assertEquals(156, corpus.sentenceCount());
+        assertEquals(2722, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus37() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_partut-ud-test.conllu");
+        assertEquals(153, corpus.sentenceCount());
+        assertEquals(3408, wordCount(corpus));
+    }
+
+    @Test
+    public void testDependencyCorpus38() {
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("en_partut-ud-train.conllu");
+        assertEquals(1781, corpus.sentenceCount());
+        assertEquals(43503, wordCount(corpus));
+    }
+
 }
