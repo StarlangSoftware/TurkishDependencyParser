@@ -44,7 +44,7 @@ public class UniversalDependencyRelation extends DependencyRelation {
             UniversalDependencyPosType.PRON, UniversalDependencyPosType.SCONJ, UniversalDependencyPosType.PUNCT, UniversalDependencyPosType.SYM, UniversalDependencyPosType.X};
 
     /**
-     * Overriden Universal Dependency Relation constructor. Gets toWord as input and calls it super class's constructor
+     * Overriden Universal Dependency Relation constructor. Gets toWord as input and calls it super class constructor
      * @param toWord Index of the word in the sentence that dependency relation is related
      */
     public UniversalDependencyRelation(int toWord) {
@@ -52,7 +52,7 @@ public class UniversalDependencyRelation extends DependencyRelation {
     }
 
     /**
-     * The getDependencyTag method takes an dependency tag as string and returns the {@link UniversalDependencyType}
+     * The getDependencyTag method takes a dependency tag as string and returns the {@link UniversalDependencyType}
      * form of it.
      *
      * @param tag  Type of the dependency tag in string form

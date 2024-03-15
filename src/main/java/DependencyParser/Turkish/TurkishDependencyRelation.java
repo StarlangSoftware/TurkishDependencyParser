@@ -4,8 +4,8 @@ import DependencyParser.DependencyRelation;
 
 public class TurkishDependencyRelation extends DependencyRelation {
 
-    private int toIG;
-    private TurkishDependencyType turkishDependencyType;
+    private final int toIG;
+    private final TurkishDependencyType turkishDependencyType;
 
     public static final String[] turkishDependencyTypes = {"VOCATIVE", "SUBJECT", "DATIVE.ADJUNCT", "OBJECT", "POSSESSOR",
             "MODIFIER", "S.MODIFIER", "ABLATIVE.ADJUNCT", "DETERMINER", "SENTENCE",
@@ -19,7 +19,7 @@ public class TurkishDependencyRelation extends DependencyRelation {
             TurkishDependencyType.FOCUS_PARTICLE, TurkishDependencyType.EQU_ADJUNCT, TurkishDependencyType.APPOSITION};
 
     /**
-     * The getDependencyTag method takes an dependency tag as string and returns the {@link TurkishDependencyType}
+     * The getDependencyTag method takes a dependency tag as string and returns the {@link TurkishDependencyType}
      * form of it.
      *
      * @param tag  Type of the dependency tag in string form

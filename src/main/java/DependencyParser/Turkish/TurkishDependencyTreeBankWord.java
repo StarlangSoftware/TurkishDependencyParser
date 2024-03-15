@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class TurkishDependencyTreeBankWord extends Word{
 
     private MorphologicalParse parse;
-    private ArrayList<MorphologicalParse> originalParses;
+    private final ArrayList<MorphologicalParse> originalParses;
     private TurkishDependencyRelation relation = null;
 
     /**
@@ -21,7 +21,7 @@ public class TurkishDependencyTreeBankWord extends Word{
         super();
         String IG, relationName, dependencyType;
         int i, index, toWord = 0, toIG = 0;
-        originalParses = new ArrayList<MorphologicalParse>();
+        originalParses = new ArrayList<>();
         if (wordNode.hasAttributes()){
             if (!wordNode.getPcData().isEmpty()){
                 name = wordNode.getPcData();
@@ -37,10 +37,10 @@ public class TurkishDependencyTreeBankWord extends Word{
             if (!wordNode.getAttributeValue("REL").isEmpty()){
                 relationName = wordNode.getAttributeValue("REL");
                 if (!relationName.equals("[,( )]")){
-                    String[] relationParts = relationName.split("[\\[\\(\\)\\],]");
+                    String[] relationParts = relationName.split("[\\[()\\],]");
                     index = 0;
                     for (i = 0; i < relationParts.length; i++){
-                        if (relationParts[i].length() != 0){
+                        if (!relationParts[i].isEmpty()){
                             index++;
                             switch (index){
                                 case 1:toWord = Integer.parseInt(relationParts[i]);
@@ -76,12 +76,12 @@ public class TurkishDependencyTreeBankWord extends Word{
      * @return An array of inflectional groups stored as strings.
      */
     private ArrayList<String> splitIntoInflectionalGroups(String IG){
-        ArrayList<String> inflectionalGroups = new ArrayList<String>();
+        ArrayList<String> inflectionalGroups = new ArrayList<>();
         IG = IG.replaceAll("\\(\\+Punc", "@").replaceAll("\\)\\+Punc", "\\$");
-        String[] iGs = IG.split("[\\[\\(\\)\\]]");
+        String[] iGs = IG.split("[\\[()\\]]");
         for (int i = 0; i < iGs.length; i++){
-            iGs[i] = iGs[i].replaceAll("@", "\\(\\+Punc").replaceAll("\\$", "\\)\\+Punc");
-            if (iGs[i].length() != 0){
+            iGs[i] = iGs[i].replaceAll("@", "(+Punc").replaceAll("\\$", ")+Punc");
+            if (!iGs[i].isEmpty()){
                 inflectionalGroups.add(iGs[i]);
             }
         }
@@ -99,7 +99,7 @@ public class TurkishDependencyTreeBankWord extends Word{
     /**
      * Accessor for a specific parse.
      * @param index Index of the word.
-     * @return Parse of the index'th word
+     * @return Parse of the word with index
      */
     public MorphologicalParse getOriginalParse(int index){
         if (index < originalParses.size()){

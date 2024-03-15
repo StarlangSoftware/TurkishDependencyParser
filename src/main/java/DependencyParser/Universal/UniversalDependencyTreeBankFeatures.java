@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class UniversalDependencyTreeBankFeatures {
 
-    private HashMap<String, String> featureList;
+    private final HashMap<String, String> featureList;
 
     private static final String[] universalFeatureTypes =
             {"PronType", "NumType", "Poss", "Reflex", "Foreign",
@@ -13,7 +13,7 @@ public class UniversalDependencyTreeBankFeatures {
             "Mood", "Tense", "Aspect", "Voice", "Evident",
             "Polarity", "Person", "Polite", "Clusivity", "NumForm"};
 
-    private static final String universalFeatureValues[][] = {
+    private static final String[][] universalFeatureValues = {
             {"Art", "Dem",	"Emp", "Exc", "Ind", "Int", "Neg", "Prs", "Rcp", "Rel", "Tot"},
             {"Card", "Dist", "Frac", "Mult", "Ord", "Range", "Sets"},
             {"Yes"},
@@ -45,7 +45,7 @@ public class UniversalDependencyTreeBankFeatures {
             {"Word", "Digit", "Roman"},
     };
 
-    private static final String turkishFeatureValues[][] = {
+    private static final String[][] turkishFeatureValues = {
             {"Art", "Dem",	"Ind", "Int", "Neg", "Prs", "Rcp", "Rel", "Tot"},
             {"Card", "Dist", "Ord"},
             {},
@@ -77,7 +77,7 @@ public class UniversalDependencyTreeBankFeatures {
             {}
     };
 
-    private static final String englishFeatureValues[][] = {
+    private static final String[][] englishFeatureValues = {
             {"Art", "Dem",	"Emp", "Ind", "Int", "Neg", "Prs", "Rcp", "Rel", "Tot"},
             {"Card", "Frac", "Mult", "Ord"},
             {"Yes"},
@@ -215,15 +215,15 @@ public class UniversalDependencyTreeBankFeatures {
         if (featureList.isEmpty()){
             return "_";
         }
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (String feature : featureList.keySet()){
-            if (result.equals("")){
-                result = feature + "=" + getFeatureValue(feature);
+            if (result.toString().isEmpty()){
+                result = new StringBuilder(feature + "=" + getFeatureValue(feature));
             } else {
-                result += "|" + feature + "=" + getFeatureValue(feature);
+                result.append("|").append(feature).append("=").append(getFeatureValue(feature));
             }
         }
-        return result;
+        return result.toString();
     }
 
     @Override

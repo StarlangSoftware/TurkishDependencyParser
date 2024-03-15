@@ -4,14 +4,14 @@ import Dictionary.Word;
 
 public class UniversalDependencyTreeBankWord extends Word {
 
-    private int id;
-    private String lemma;
-    private UniversalDependencyPosType upos;
-    private String xpos;
+    private final int id;
+    private final String lemma;
+    private final UniversalDependencyPosType upos;
+    private final String xpos;
     private UniversalDependencyTreeBankFeatures features;
     private UniversalDependencyRelation relation;
-    private String deps;
-    private String misc;
+    private final String deps;
+    private final String misc;
 
     public UniversalDependencyTreeBankWord(int id, String name, String lemma, UniversalDependencyPosType upos, String xpos,
                                            UniversalDependencyTreeBankFeatures features,
@@ -130,14 +130,12 @@ public class UniversalDependencyTreeBankWord extends Word {
         UniversalDependencyTreeBankWord word = new UniversalDependencyTreeBankWord(id, name, lemma, upos, xpos, null, null, deps, misc);
         try {
             word.features = this.features.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+        } catch (CloneNotSupportedException ignored) {
         }
         if (relation != null) {
             try {
                 word.relation = this.relation.clone();
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
+            } catch (CloneNotSupportedException ignored) {
             }
         } else {
             word.relation = null;

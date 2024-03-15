@@ -4,7 +4,7 @@ import DependencyParser.DependencyRelation;
 
 public class StanfordDependencyRelation extends DependencyRelation {
 
-    private StanfordDependencyType stanfordDependencyType;
+    private final StanfordDependencyType stanfordDependencyType;
 
     public static final String[] stanfordDependencyTypes = {"acomp", "advcl", "advmod", "agent", "amod", "appos", "aux",
     "auxpass", "cc", "ccomp", "conj", "cop", "csubj", "csubjpass", "dep", "det", "discourse", "dobj", "expl", "goeswith",
@@ -24,7 +24,7 @@ public class StanfordDependencyRelation extends DependencyRelation {
     StanfordDependencyType.XCOMP, StanfordDependencyType.XSUBJ};
 
     /**
-     * The getDependencyTag method takes an dependency tag as string and returns the {@link StanfordDependencyType}
+     * The getDependencyTag method takes a dependency tag as string and returns the {@link StanfordDependencyType}
      * form of it.
      *
      * @param tag  Type of the dependency tag in string form

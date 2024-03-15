@@ -7,7 +7,7 @@ import Dictionary.Word;
 import java.util.ArrayList;
 
 public class UniversalDependencyTreeBankSentence extends Sentence {
-    private ArrayList<String> comments;
+    private final ArrayList<String> comments;
 
     public UniversalDependencyTreeBankSentence(){
         super();
@@ -59,15 +59,15 @@ public class UniversalDependencyTreeBankSentence extends Sentence {
     }
 
     public String toString(){
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (String comment : comments){
-            result += comment + "\n";
+            result.append(comment).append("\n");
         }
         for (Word w : words){
             UniversalDependencyTreeBankWord word = (UniversalDependencyTreeBankWord) w;
-            result += word.toString() + "\n";
+            result.append(word.toString()).append("\n");
         }
-        return result;
+        return result.toString();
     }
 
     public ParserEvaluationScore compareParses(UniversalDependencyTreeBankSentence sentence){

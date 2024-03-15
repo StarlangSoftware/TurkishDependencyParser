@@ -21,19 +21,18 @@ public class UniversalDependencyTreeBankCorpus extends Corpus{
             ClassLoader classLoader = getClass().getClassLoader();
             language = fileName.substring(0, fileName.indexOf('_'));
             BufferedReader br = new BufferedReader(new InputStreamReader(classLoader.getResourceAsStream(fileName), StandardCharsets.UTF_8));
-            String sentence = "";
+            StringBuilder sentence = new StringBuilder();
             String line = br.readLine();
             while (line != null) {
-                if (line.length() == 0){
-                    addSentence(new UniversalDependencyTreeBankSentence(language, sentence));
-                    sentence = "";
+                if (line.isEmpty()){
+                    addSentence(new UniversalDependencyTreeBankSentence(language, sentence.toString()));
+                    sentence = new StringBuilder();
                 } else {
-                    sentence += line + "\n";
+                    sentence.append(line).append("\n");
                 }
                 line = br.readLine();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
     }
 
