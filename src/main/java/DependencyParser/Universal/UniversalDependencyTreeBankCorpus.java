@@ -16,6 +16,11 @@ public class UniversalDependencyTreeBankCorpus extends Corpus{
 
     }
 
+    /**
+     * Constructs a universal dependency corpus from an input file. Reads the sentences one by one and constructs a
+     * universal dependency sentence from each line read.
+     * @param fileName Input file name.
+     */
     public UniversalDependencyTreeBankCorpus(String fileName){
         try {
             ClassLoader classLoader = getClass().getClassLoader();
@@ -36,6 +41,12 @@ public class UniversalDependencyTreeBankCorpus extends Corpus{
         }
     }
 
+    /**
+     * Compares the corpus with the given corpus and returns a parser evaluation score for this comparison. The result
+     * is calculated by summing up the parser evaluation scores of sentence by sentence comparisons.
+     * @param corpus Universal dependency corpus to be compared.
+     * @return A parser evaluation score object.
+     */
     public ParserEvaluationScore compareParses(UniversalDependencyTreeBankCorpus corpus){
         ParserEvaluationScore score = new ParserEvaluationScore();
         for (int i = 0; i < sentences.size(); i++){

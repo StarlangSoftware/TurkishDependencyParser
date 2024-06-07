@@ -67,6 +67,12 @@ public class UniversalDependencyRelation extends DependencyRelation {
         return null;
     }
 
+    /**
+     * The getDependencyTag method takes a dependency pos type as string and returns the {@link UniversalDependencyPosType}
+     * form of it.
+     * @param tag Dependency pos type in string form
+     * @return Dependency pos type for a given dependency pos string
+     */
     public static UniversalDependencyPosType getDependencyPosType(String tag){
         for (int i = 0; i < universalDependencyPosTypes.length; i++) {
             if (tag.equalsIgnoreCase(universalDependencyPosTypes[i])) {
@@ -90,6 +96,16 @@ public class UniversalDependencyRelation extends DependencyRelation {
         }
     }
 
+    /**
+     * Compares the relation with the given universal dependency relation and returns a parser evaluation score for this
+     * comparison. If toWord fields are equal for both relation UAS is 1, otherwise it is 0. If both toWord and
+     * dependency types are the same, LAS is 1, otherwise it is 0. If only dependency types of both relations are
+     * the same, LS is 1, otherwise it is 0.
+     * @param relation Universal dependency relation to be compared.
+     * @return A parser evaluation score object with (i) LAS = 1, if to and dependency types are same; LAS = 0,
+     * otherwise, (ii) UAS = 1, if to is the same; UAS = 0, otherwise, (iii) LS = 1, if dependency types are the same;
+     * LS = 0, otherwise.
+     */
     public ParserEvaluationScore compareRelations(UniversalDependencyRelation relation){
         double LS = 0.0, LAS = 0.0, UAS = 0.0;
         if (toString().equals(relation.toString())){
@@ -117,6 +133,14 @@ public class UniversalDependencyRelation extends DependencyRelation {
         return handleUniversalDependencyType(this.universalDependencyType, relation.universalDependencyType) && this.toWord == relation.toWord;
     }
 
+    /**
+     * Compares two universal dependency types. If both are null, returns true. If none of them are null, they are
+     * compared, if they are same, returns true, otherwise returns false. If only one of them is null, returns false.
+     * @param type1 First universal dependency type.
+     * @param type2 Second universal dependency type.
+     * @return If both are null, returns true. If none of them are null, they are compared, if they are same, returns
+     * true, otherwise returns false. If only one of them is null, returns false.
+     */
     private boolean handleUniversalDependencyType(UniversalDependencyType type1, UniversalDependencyType type2) {
         if (type1 == null && type2 == null) {
             return true;
