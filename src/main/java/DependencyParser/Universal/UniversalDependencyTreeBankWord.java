@@ -104,20 +104,20 @@ public class UniversalDependencyTreeBankWord extends Word {
     }
 
     /**
+     * Accessor for the relation attribute.
+     * @return Relation attribute
+     */
+    public UniversalDependencyRelation getRelation() {
+        return relation;
+    }
+
+    /**
      * Checks if the given feature exists.
      * @param featureName Name of the feature
      * @return True if the given feature exists, false otherwise.
      */
     public boolean featureExists(String featureName) {
         return features.featureExists(featureName);
-    }
-
-    /**
-     * Accessor for the relation attribute.
-     * @return Relation attribute
-     */
-    public UniversalDependencyRelation getRelation() {
-        return relation;
     }
 
     /**
