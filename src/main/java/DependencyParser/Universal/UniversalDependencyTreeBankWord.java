@@ -138,7 +138,7 @@ public class UniversalDependencyTreeBankWord extends Word {
 
     /**
      * Accessor for the misc attribute
-     * @return Xpos attribute
+     * @return Misc attribute
      */
     public String getMisc() {
         return misc;

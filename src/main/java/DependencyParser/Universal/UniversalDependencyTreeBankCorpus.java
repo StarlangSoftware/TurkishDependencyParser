@@ -12,6 +12,9 @@ public class UniversalDependencyTreeBankCorpus extends Corpus{
 
     private String language;
 
+    /**
+     * Empty constructor.
+     */
     public UniversalDependencyTreeBankCorpus(){
 
     }

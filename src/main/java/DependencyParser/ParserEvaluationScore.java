@@ -45,7 +45,7 @@ public class ParserEvaluationScore {
 
     /**
      * Accessor for the UAS field
-     * @return Unlabel attachment score
+     * @return Unlabelled attachment score
      */
     public double getUAS() {
         return UAS;
