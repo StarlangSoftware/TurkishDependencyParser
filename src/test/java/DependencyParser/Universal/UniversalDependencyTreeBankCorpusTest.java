@@ -102,14 +102,14 @@ public class UniversalDependencyTreeBankCorpusTest {
     public void testDependencyCorpus13() {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_atis-ud-test.conllu");
         assertEquals(586, corpus.sentenceCount());
-        assertEquals(4813, wordCount(corpus));
+        assertEquals(4815, wordCount(corpus));
     }
 
     @Test
     public void testDependencyCorpus14() {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_atis-ud-train.conllu");
         assertEquals(4274, corpus.sentenceCount());
-        assertEquals(36200, wordCount(corpus));
+        assertEquals(36230, wordCount(corpus));
     }
 
     @Test
@@ -130,7 +130,7 @@ public class UniversalDependencyTreeBankCorpusTest {
     public void testDependencyCorpus17() {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_framenet-ud-train.conllu");
         assertEquals(2288, corpus.sentenceCount());
-        assertEquals(16333, wordCount(corpus));
+        assertEquals(16335, wordCount(corpus));
     }
 
     @Test
@@ -172,28 +172,28 @@ public class UniversalDependencyTreeBankCorpusTest {
     public void testDependencyCorpus23() {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_penn-ud-train.conllu");
         assertEquals(14850, corpus.sentenceCount());
-        assertEquals(166513, wordCount(corpus));
+        assertEquals(166514, wordCount(corpus));
     }
 
     @Test
     public void testDependencyCorpus24() {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_tourism-ud-dev.conllu");
         assertEquals(2166, corpus.sentenceCount());
-        assertEquals(10203, wordCount(corpus));
+        assertEquals(10169, wordCount(corpus));
     }
 
     @Test
     public void testDependencyCorpus25() {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_tourism-ud-test.conllu");
         assertEquals(2191, corpus.sentenceCount());
-        assertEquals(10125, wordCount(corpus));
+        assertEquals(10106, wordCount(corpus));
     }
 
     @Test
     public void testDependencyCorpus26() {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_tourism-ud-train.conllu");
-        assertEquals(15476, corpus.sentenceCount());
-        assertEquals(71141, wordCount(corpus));
+        assertEquals(15473, corpus.sentenceCount());
+        assertEquals(70877, wordCount(corpus));
     }
 
     @Test
