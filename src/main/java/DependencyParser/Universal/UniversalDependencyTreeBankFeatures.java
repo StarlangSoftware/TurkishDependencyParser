@@ -50,10 +50,10 @@ public class UniversalDependencyTreeBankFeatures {
             {"Card", "Dist", "Ord"},
             {},
             {"Yes"},
-            {},
+            {"Yes"},
 
             {"Yes"},
-            {},
+            {"Yes"},
             {},
             {},
             {},
@@ -72,7 +72,7 @@ public class UniversalDependencyTreeBankFeatures {
 
             {"Neg", "Pos"},
             {"1", "2", "3"},
-            {},
+            {"Form", "Infm"},
             {},
             {}
     };
