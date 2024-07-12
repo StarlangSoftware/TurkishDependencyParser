@@ -74,7 +74,7 @@ public class UniversalDependencyTreeBankSentence extends Sentence {
 
     /**
      * Overridden toString method. Concatenates the strings of words to get the string of a sentence.
-     * @return Concatenation of the strings of thw strings of words.
+     * @return Concatenation of the strings of words.
      */
     public String toString(){
         StringBuilder result = new StringBuilder();
