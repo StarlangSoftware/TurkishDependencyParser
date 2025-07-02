@@ -14,11 +14,20 @@ public class UniversalDependencyTreeBankCorpusTest {
         return wordCount;
     }
 
+    private int splitCount(UniversalDependencyTreeBankCorpus corpus){
+        int splitCount = 0;
+        for (int i = 0; i < corpus.sentenceCount(); i++){
+            splitCount += ((UniversalDependencyTreeBankSentence) corpus.getSentence(i)).splitSize();
+        }
+        return splitCount;
+    }
+
     @Test
     public void testDependencyCorpus1() {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_gb-ud-test.conllu");
         assertEquals(2880, corpus.sentenceCount());
         assertEquals(17177, wordCount(corpus));
+        assertEquals(371, splitCount(corpus));
     }
 
     @Test
@@ -26,6 +35,7 @@ public class UniversalDependencyTreeBankCorpusTest {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_imst-ud-dev.conllu");
         assertEquals(1100, corpus.sentenceCount());
         assertEquals(10542, wordCount(corpus));
+        assertEquals(279, splitCount(corpus));
     }
 
     @Test
@@ -33,6 +43,7 @@ public class UniversalDependencyTreeBankCorpusTest {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_imst-ud-test.conllu");
         assertEquals(1100, corpus.sentenceCount());
         assertEquals(10032, wordCount(corpus));
+        assertEquals(278, splitCount(corpus));
     }
 
     @Test
@@ -40,6 +51,7 @@ public class UniversalDependencyTreeBankCorpusTest {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_imst-ud-train.conllu");
         assertEquals(3435, corpus.sentenceCount());
         assertEquals(37522, wordCount(corpus));
+        assertEquals(1082, splitCount(corpus));
     }
 
     @Test
@@ -47,6 +59,7 @@ public class UniversalDependencyTreeBankCorpusTest {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_pud-ud-test.conllu");
         assertEquals(1000, corpus.sentenceCount());
         assertEquals(16881, wordCount(corpus));
+        assertEquals(346, splitCount(corpus));
     }
 
     @Test
@@ -54,6 +67,7 @@ public class UniversalDependencyTreeBankCorpusTest {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_boun-ud-dev.conllu");
         assertEquals(979, corpus.sentenceCount());
         assertEquals(12289, wordCount(corpus));
+        assertEquals(266, splitCount(corpus));
     }
 
     @Test
@@ -61,6 +75,7 @@ public class UniversalDependencyTreeBankCorpusTest {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_boun-ud-test.conllu");
         assertEquals(979, corpus.sentenceCount());
         assertEquals(12210, wordCount(corpus));
+        assertEquals(194, splitCount(corpus));
     }
 
     @Test
@@ -68,6 +83,7 @@ public class UniversalDependencyTreeBankCorpusTest {
         UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_boun-ud-train.conllu");
         assertEquals(7803, corpus.sentenceCount());
         assertEquals(100713, wordCount(corpus));
+        assertEquals(2914, splitCount(corpus));
     }
 
     @Test

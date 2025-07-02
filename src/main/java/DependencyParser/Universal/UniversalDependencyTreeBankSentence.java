@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class UniversalDependencyTreeBankSentence extends Sentence {
     private final ArrayList<String> comments;
+    private final ArrayList<String> splits;
 
     /**
      * Empty constructor for the UniversalDependencyTreeBankSentence. Initializes comments.
@@ -15,6 +16,7 @@ public class UniversalDependencyTreeBankSentence extends Sentence {
     public UniversalDependencyTreeBankSentence(){
         super();
         comments = new ArrayList<>();
+        splits = new ArrayList<>();
     }
 
     /**
@@ -58,10 +60,31 @@ public class UniversalDependencyTreeBankSentence extends Sentence {
                         UniversalDependencyTreeBankWord word = new UniversalDependencyTreeBankWord(Integer.parseInt(id), surfaceForm,
                                 lemma, upos, xpos, features, relation, deps, misc);
                         addWord(word);
+                    } else {
+                        if (id.matches("\\d+-\\d+")){
+                            splits.add(id);
+                        }
                     }
                 }
             }
         }
+    }
+
+    /**
+     * Returns number of splits in the sentence
+     * @return Number of splits in the sentence
+     */
+    public int splitSize(){
+        return splits.size();
+    }
+
+    /**
+     * Returns the split at position index
+     * @param index Position
+     * @return The split at position index
+     */
+    public String getSplit(int index){
+        return splits.get(index);
     }
 
     /**
