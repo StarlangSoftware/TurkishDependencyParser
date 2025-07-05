@@ -32,7 +32,7 @@ public class UniversalDependencyTreeBankCorpusTest {
 
     @Test
     public void testDependencyCorpus2() {
-        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_imst-ud-dev.conllu");
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_imst2-ud-dev.conllu");
         assertEquals(1100, corpus.sentenceCount());
         assertEquals(10542, wordCount(corpus));
         assertEquals(279, splitCount(corpus));
@@ -40,7 +40,7 @@ public class UniversalDependencyTreeBankCorpusTest {
 
     @Test
     public void testDependencyCorpus3() {
-        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_imst-ud-test.conllu");
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_imst2-ud-test.conllu");
         assertEquals(1100, corpus.sentenceCount());
         assertEquals(10032, wordCount(corpus));
         assertEquals(278, splitCount(corpus));
@@ -48,7 +48,7 @@ public class UniversalDependencyTreeBankCorpusTest {
 
     @Test
     public void testDependencyCorpus4() {
-        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_imst-ud-train.conllu");
+        UniversalDependencyTreeBankCorpus corpus = new UniversalDependencyTreeBankCorpus("tr_imst2-ud-train.conllu");
         assertEquals(3435, corpus.sentenceCount());
         assertEquals(37522, wordCount(corpus));
         assertEquals(1082, splitCount(corpus));
