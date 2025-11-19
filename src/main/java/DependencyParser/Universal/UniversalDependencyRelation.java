@@ -21,7 +21,7 @@ public class UniversalDependencyRelation extends DependencyRelation {
             "NMOD:TMOD", "ADVMOD:EMPH", "AUX:Q", "COMPOUND:LVC",
             "COMPOUND:REDUP", "CSUBJ:COP", "NMOD:COMP", "NMOD:PART",
             "NSUBJ:COP", "OBL:AGENT", "OBL:TMOD", "OBL:NPMOD", "NSUBJ:OUTER",
-            "CSUBJ:OUTER", "ADVCL:RELCL"};
+            "CSUBJ:OUTER", "ADVCL:RELCL", "OBL:UNMARKED"};
     public static final UniversalDependencyType[] universalDependencyTags = {UniversalDependencyType.ACL, UniversalDependencyType.ADVCL,
             UniversalDependencyType.ADVMOD, UniversalDependencyType.AMOD, UniversalDependencyType.APPOS, UniversalDependencyType.AUX, UniversalDependencyType.CASE,
             UniversalDependencyType.CC, UniversalDependencyType.CCOMP, UniversalDependencyType.CLF, UniversalDependencyType.COMPOUND, UniversalDependencyType.CONJ,
@@ -36,7 +36,7 @@ public class UniversalDependencyRelation extends DependencyRelation {
             UniversalDependencyType.NMOD_TMOD, UniversalDependencyType.ADVMOD_EMPH, UniversalDependencyType.AUX_Q, UniversalDependencyType.COMPOUND_LVC,
             UniversalDependencyType.COMPOUND_REDUP, UniversalDependencyType.CSUBJ_COP, UniversalDependencyType.NMOD_COMP, UniversalDependencyType.NMOD_PART,
             UniversalDependencyType.NSUBJ_COP, UniversalDependencyType.OBL_AGENT, UniversalDependencyType.OBL_TMOD, UniversalDependencyType.OBL_NPMOD, UniversalDependencyType.NSUBJ_OUTER,
-            UniversalDependencyType.CSUBJ_OUTER, UniversalDependencyType.ADVCL_RELCL};
+            UniversalDependencyType.CSUBJ_OUTER, UniversalDependencyType.ADVCL_RELCL, UniversalDependencyType.OBL_UNMARKED};
     public static final String[] universalDependencyPosTypes = {"ADJ", "ADV", "INTJ", "NOUN", "PROPN", "VERB", "ADP", "AUX", "CCONJ",
             "DET", "NUM", "PART", "PRON", "SCONJ", "PUNCT", "SYM", "X"};
     public static final UniversalDependencyPosType[] universalDependencyPosTags = {UniversalDependencyPosType.ADJ, UniversalDependencyPosType.ADV, UniversalDependencyPosType.INTJ, UniversalDependencyPosType.NOUN, UniversalDependencyPosType.PROPN,
