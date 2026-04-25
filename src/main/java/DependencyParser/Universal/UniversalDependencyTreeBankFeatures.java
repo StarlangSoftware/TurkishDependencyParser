@@ -11,7 +11,8 @@ public class UniversalDependencyTreeBankFeatures {
             "Abbr", "Typo", "Gender", "Animacy", "NounClass",
             "Number", "Case", "Definite", "Degree", "VerbForm",
             "Mood", "Tense", "Aspect", "Voice", "Evident",
-            "Polarity", "Person", "Polite", "Clusivity", "NumForm"};
+            "Polarity", "Person", "Polite", "Clusivity", "NumForm",
+            "ExtPos"};
 
     private static final String[][] universalFeatureValues = {
             {"Art", "Dem",	"Emp", "Exc", "Ind", "Int", "Neg", "Prs", "Rcp", "Rel", "Tot"},
@@ -43,6 +44,8 @@ public class UniversalDependencyTreeBankFeatures {
             {"Elev", "Form", "Humb", "Infm"},
             {"Ex", "In"},
             {"Word", "Digit", "Roman"},
+
+            {"ADJ", "ADP", "ADV", "AUX", "CCONJ", "DET", "INTJ", "PRON", "PROPN", "SCONJ"}
     };
 
     private static final String[][] turkishFeatureValues = {
@@ -74,7 +77,9 @@ public class UniversalDependencyTreeBankFeatures {
             {"1", "2", "3"},
             {"Form", "Infm"},
             {},
-            {}
+            {},
+
+            {"ADJ", "ADP", "ADV", "AUX", "CCONJ", "DET", "INTJ", "PRON", "PROPN", "SCONJ"}
     };
 
     private static final String[][] englishFeatureValues = {
@@ -106,7 +111,9 @@ public class UniversalDependencyTreeBankFeatures {
             {"1", "2", "3"},
             {},
             {},
-            {"Word", "Digit", "Roman"}
+            {"Word", "Digit", "Roman"},
+
+            {"ADJ", "ADP", "ADV", "AUX", "CCONJ", "DET", "INTJ", "PRON", "PROPN", "SCONJ"}
     };
 
     /**
